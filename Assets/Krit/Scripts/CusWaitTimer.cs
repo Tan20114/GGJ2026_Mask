@@ -5,8 +5,10 @@ using UnityEngine.UI;
 public class CusWaitTimer : MonoBehaviour
 {
     [SerializeField] float waitDuration = 5f;
+    [SerializeField] GameObject boarder;
     private Image image;
     private bool db = false;
+    private bool isActive = false;
     private Vector3 intialScale;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,6 +16,7 @@ public class CusWaitTimer : MonoBehaviour
         LeanTween.reset();
         image = GetComponent<Image>();
         intialScale = image.rectTransform.localScale;
+        toggleActive(false);
         //Debug.Log(image.rectTransform.localScale);
 
     }
@@ -38,6 +41,10 @@ public class CusWaitTimer : MonoBehaviour
 
     public void StartTimer()
     {
+        if(isActive) return;
+
+        toggleActive(true);
+
         // Reset scale first
         image.rectTransform.localScale = intialScale;
         image.color = Color.green;
@@ -54,6 +61,12 @@ public class CusWaitTimer : MonoBehaviour
         .setOnUpdate((Vector3 scale) =>
         {
             UpdateColor(scale.x);
+        })
+        .setOnComplete(() =>
+        {
+            UpdateColor(0f);
+            LeanTween.cancel(image.gameObject);
+            toggleActive(false);
         });
     }
 
@@ -81,6 +94,24 @@ public class CusWaitTimer : MonoBehaviour
         {
             // Yellow
             image.color = Color.Lerp(mid, end, (t - 0.5f) * 2f);
+        }
+    }
+
+    private void toggleActive(bool value)
+    {
+        //img.gameObject.SetActive(value);
+        //boarder.SetActive(value);
+        if (!value)
+        {
+            image.color = image.color * 0f;
+            boarder.GetComponent<Image>().color = Color.white * 0f;
+            isActive = false;
+        }
+        else
+        {
+            image.fillAmount = 0f;
+            isActive = true;
+            boarder.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         }
     }
 }
