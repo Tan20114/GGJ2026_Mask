@@ -1,16 +1,21 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CusWaitTimer : MonoBehaviour
 {
-    [SerializeField] float WaitDuration = 5f;
-    private float timer = 0f;
+    [SerializeField] float waitDuration = 5f;
     private Image image;
+    private bool db = false;
+    private Vector3 intialScale;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        LeanTween.reset();
         image = GetComponent<Image>();
-        Debug.Log(image.rectTransform.localScale);
+        intialScale = image.rectTransform.localScale;
+        //Debug.Log(image.rectTransform.localScale);
+
     }
 
     // Update is called once per frame
@@ -18,28 +23,64 @@ public class CusWaitTimer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            SetImageSize(image.rectTransform.localScale.x - 0.1f, image.rectTransform.localScale.y);
+            if (db) return;
+
+            db = true;
+            StartTimer();
+            Debug.Log("Pressed");
+            db = false;
         }
     }
 
     void FixedUpdate()
     {
-        timer += Time.fixedDeltaTime;
-        if (timer >= WaitDuration)
+    }
+
+    public void StartTimer()
+    {
+        // Reset scale first
+        image.rectTransform.localScale = intialScale;
+        image.color = Color.green;
+
+        // Kill previous tweens (VERY important)
+        LeanTween.cancel(image.gameObject);
+
+        LeanTween.scale(
+            image.gameObject,
+            new Vector3(0, intialScale.y, intialScale.z),
+            waitDuration
+        )
+        .setEase(LeanTweenType.linear)
+        .setOnUpdate((Vector3 scale) =>
         {
-            SetImageSize(1f, 1f);
-            timer = 0f;
+            UpdateColor(scale.x);
+        });
+    }
+
+    public void ReduceTimer(byte value)
+    {
+        waitDuration -= value;
+    }
+
+    [SerializeField] Color start = Color.green;
+    [SerializeField] Color mid = Color.yellow;
+    [SerializeField] Color end = Color.red;
+    private void UpdateColor(float scaleX)
+    {
+        // scaleX goes from 1 
+        float t = 1f - scaleX; // 0 
+
+        
+
+        if (t < 0.5f)
+        {
+            // Green
+            image.color = Color.Lerp(start, mid, t * 2f);
         }
-    }
-
-    private void SetImageSize(float width, float height)
-    {
-        image.rectTransform.localScale = new Vector2(width, height);
-        Debug.Log(image.rectTransform.localScale);
-    }
-
-    public void ReduceTimer()
-    {
-        WaitDuration -= 1f;
+        else
+        {
+            // Yellow
+            image.color = Color.Lerp(mid, end, (t - 0.5f) * 2f);
+        }
     }
 }
