@@ -9,8 +9,16 @@ public class FoodWaitTimer : MonoBehaviour
     [SerializeField] float waitDuration = 5f;
     private Image img;
     private bool db = false;
-    private bool isActive = false;
+    //private bool isActive = false;
     private Vector3 intialPos;
+    public State CurrentState;
+    
+    public enum State
+    {
+        idle,
+        cooking,
+        finished,
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,6 +26,7 @@ public class FoodWaitTimer : MonoBehaviour
         LeanTween.reset();
         img = GetComponent<Image>();
         intialPos = img.rectTransform.localPosition;
+        CurrentState = State.idle;
 
         toggleActive(false);
     }
@@ -33,12 +42,14 @@ public class FoodWaitTimer : MonoBehaviour
         CountDownEndTimer();
     }
 
+    #region Timer
     public void StartTimer()
     {
-        if (isActive) return;
+        if (CurrentState == State.cooking) return;
 
         toggleActive(true);
         hasJumped = false;
+        
 
         LeanTween.cancel(img.gameObject);
 
@@ -67,6 +78,16 @@ public class FoodWaitTimer : MonoBehaviour
             }
         });
     }
+
+    public void CancleTimer()
+    {
+        if(CurrentState != State.cooking) return;
+
+        LeanTween.cancel(img.gameObject);
+        toggleActive(false);
+        CurrentState = State.idle;
+    }
+    #endregion
 
     #region Color
 
@@ -121,8 +142,7 @@ public class FoodWaitTimer : MonoBehaviour
         if (timer >= DisappearWaitingTime)
         {
             toggleActive(false);
-            isCountingDown = false;
-            timer = 0f;
+            CurrentState = State.finished;
         }
     }
 
@@ -134,13 +154,27 @@ public class FoodWaitTimer : MonoBehaviour
         {
             img.color = img.color * 0f;
             boarder.GetComponent<Image>().color = Color.white * 0f;
-            isActive = false;
+            isCountingDown = false;
+            timer = 0f;
+            img.rectTransform.localPosition = intialPos;
         } else
         {
             img.fillAmount = 0f;
-            isActive = true;
+            CurrentState = State.cooking;
             boarder.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         }
+    }
+
+    /// <summary>
+    /// Returns true if state was finished and successfully reset to idle
+    /// </summary>
+    /// <returns></returns>
+    public bool FinishCook()
+    {
+        if (CurrentState != State.finished) return false;
+        
+        CurrentState = State.idle;
+        return true;
     }
 
     private void DebugPlay()
