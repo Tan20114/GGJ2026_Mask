@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
     float stepTime;
     float baseY;
 
-    [SerializeField] CharacterState currentState = CharacterState.MovingIn;
+    public CharacterState currentState = CharacterState.MovingIn;
     [SerializeField] string speech;
     bool isTalking = false;
     GameObject dialogueBox;
@@ -51,15 +51,6 @@ public class Character : MonoBehaviour
     {
         if (transform.position.x <= 0 && currentState != CharacterState.MovingOut)
             currentState = CharacterState.Ordering;
-
-        if (Input.GetKeyDown(KeyCode.O) && currentState == CharacterState.Ordering)
-        {
-            currentState = CharacterState.MovingOut;
-            GameManager.Instance.winCount++;
-        }
-
-        if (Input.GetKeyDown(KeyCode.P) && currentState == CharacterState.Ordering)
-            currentState = CharacterState.MovingOut;
 
         if (currentState == CharacterState.MovingOut && dialogueBox != null)
             Destroy(dialogueBox);

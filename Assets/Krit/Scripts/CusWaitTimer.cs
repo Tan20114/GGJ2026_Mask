@@ -230,7 +230,7 @@ public class CusWaitTimer : MonoBehaviour
         finishParticle2.Play();
     }
     
-    private void DebugPlay()
+    public void DebugPlay()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
