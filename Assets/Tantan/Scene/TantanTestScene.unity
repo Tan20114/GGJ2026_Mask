@@ -266,17 +266,18 @@ MonoBehaviour:
   - {fileID: 4051717797265564534, guid: 123466512ba65b34ca685e1adc09133d, type: 3}
   - {fileID: 8929425253073067728, guid: 5727dbd8847f82144876cae12afb4046, type: 3}
   maskList:
-  - {fileID: 6848711043116427359, guid: 22aa8de47fd1a1c429377711544460b3, type: 3}
-  - {fileID: 3288894829498608162, guid: a668de6a244906a438d2bd99db42b1fa, type: 3}
-  - {fileID: 7057273495095238760, guid: b5cfda3b53d717d47a47d310ab37dd1c, type: 3}
-  - {fileID: 7192314684880789703, guid: 102a410219914d742953e8fbce85ce7a, type: 3}
+  - {fileID: 5412800297652012442, guid: 22aa8de47fd1a1c429377711544460b3, type: 3}
+  - {fileID: 2526683239857219398, guid: a668de6a244906a438d2bd99db42b1fa, type: 3}
+  - {fileID: 546997888497018281, guid: b5cfda3b53d717d47a47d310ab37dd1c, type: 3}
+  - {fileID: 349351878806471401, guid: 102a410219914d742953e8fbce85ce7a, type: 3}
   policeBadge: {fileID: 292050348351641461, guid: 154044f637c7b194fb4b0208bd921151, type: 3}
+  gangBadge: {fileID: 292050348351641461, guid: 8b34ad5ffd1680148aae8f632187f012, type: 3}
   spawnPoint: {fileID: 1434806403}
   endPoint: {fileID: 2040369972}
   currentCharacter: {fileID: 0}
   NormiePity: 40
-  PolicePity: 40
-  GangPity: 20
+  PolicePity: 20
+  GangPity: 40
 --- !u!1 &1404405149
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +394,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

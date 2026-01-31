@@ -4,8 +4,9 @@ public class CharacterSpawner : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] GameObject[] charList;
-    [SerializeField] GameObject[] maskList;
-    [SerializeField] GameObject policeBadge;
+    public GameObject[] maskList;
+    public GameObject policeBadge;
+    public GameObject gangBadge;
 
     [Header("Reference")]
     [SerializeField] Transform spawnPoint;
@@ -22,18 +23,18 @@ public class CharacterSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentCharacter == null)
+        if (currentCharacter == null)
         {
             NewCustomer();
         }
 
-        if(currentCharacter.transform.position.x <= endPoint.position.x)
+        if (currentCharacter.transform.position.x <= endPoint.position.x)
         {
             Destroy(currentCharacter.gameObject);
             currentCharacter = null;
@@ -62,29 +63,63 @@ public class CharacterSpawner : MonoBehaviour
         float totalpity = NormiePity + PolicePity + GangPity;
 
         float rand = Random.Range(0, totalpity);
+        Debug.Log(rand);
         maskPoint = spawned.transform.GetChild(0);
         badgePoint = spawned.transform.GetChild(1);
 
+        currentCharacter.mask = Instantiate(maskList[Random.Range(0, maskList.Length)], maskPoint.transform.position, Quaternion.identity, spawned.transform);
         if (rand <= NormiePity)
         {
             currentCharacter.role = CharacterRole.Normie;
 
-            Instantiate(maskList[Random.Range(0, maskList.Length - 1)], maskPoint.transform.position, Quaternion.identity, spawned.transform);
+            if (currentCharacter.mask.CompareTag("PoliceM"))
+                currentCharacter.badge = Instantiate(gangBadge, badgePoint.position, Quaternion.identity, spawned.transform);
+
         }
         else if (rand <= NormiePity + GangPity)
         {
             currentCharacter.role = CharacterRole.Gang;
 
-            Instantiate(maskList[2], maskPoint.transform.position, Quaternion.identity, spawned.transform);
+            if (currentCharacter.mask.CompareTag("GangM"))
+            {
+                int ranVal = Random.Range(0, 3);
+
+                switch (ranVal)
+                {
+                    case 0:
+                        currentCharacter.badge = Instantiate(gangBadge, badgePoint.position, Quaternion.identity, spawned.transform);
+                        break;
+                    case 1:
+                        currentCharacter.badge = Instantiate(policeBadge, badgePoint.position, Quaternion.identity, spawned.transform);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+                currentCharacter.badge = Instantiate(gangBadge, badgePoint.position, Quaternion.identity, spawned.transform);
         }
         else
         {
-            Instantiate(policeBadge, badgePoint.position, Quaternion.identity, spawned.transform);
-
             currentCharacter.role = CharacterRole.Police;
+
+            if (currentCharacter.mask.gameObject.CompareTag("PoliceM"))
+            {
+                int ranVal = Random.Range(0, 2);
+
+                switch (ranVal)
+                {
+                    case 0:
+                        currentCharacter.badge = Instantiate(policeBadge, badgePoint.position, Quaternion.identity, spawned.transform);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+                currentCharacter.badge = Instantiate(policeBadge, badgePoint.position, Quaternion.identity, spawned.transform);
         }
     }
-
     void NewCustomer()
     {
         currentCharacter = SpawnCharacter();

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2380415468367560436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6109791004409238290}
+  m_Layer: 0
+  m_Name: DialogPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6109791004409238290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380415468367560436}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.25, y: 1, z: 0}
+  m_LocalScale: {x: 0.50000006, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1437812941095311181}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4254580699587790298
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +96,7 @@ Transform:
   m_Children:
   - {fileID: 2533323767333806385}
   - {fileID: 4543950728034621484}
+  - {fileID: 6109791004409238290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4917840766324082434
@@ -164,11 +196,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd2d608ffa32a3458e4d5f06ed9901b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
+  dialoguePrefab: {fileID: 8115412039000642918, guid: 842ee25c99ea28345a6f7eeb27cfe221, type: 3}
+  dialogData: {fileID: 11400000, guid: 5716f51e31dfd5c43b14fd9f01424904, type: 2}
   walkSpeed: 4
   stepHeight: 0.08
   stepFrequency: 12
   currentState: 0
+  speech: 
   role: 0
+  mask: {fileID: 0}
+  badge: {fileID: 0}
 --- !u!1 &6875539693447196968
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using TMPro;
 using UnityEngine;
 
 public enum CharacterState
@@ -16,8 +18,12 @@ public enum CharacterRole
 
 public class Character : MonoBehaviour
 {
+    [Header("Reference")]
     Rigidbody2D rb => GetComponent<Rigidbody2D>();
+    [SerializeField] GameObject dialoguePrefab;
+    [SerializeField] Dialog dialogData;
 
+    [Header("Status")]
     [SerializeField] float walkSpeed = 2f;
     [SerializeField] float stepHeight = 0.08f;
     [SerializeField] float stepFrequency = 6f;
@@ -26,7 +32,14 @@ public class Character : MonoBehaviour
     float baseY;
 
     [SerializeField] CharacterState currentState = CharacterState.MovingIn;
+    [SerializeField] string speech;
+    bool isTalking = false;
+    GameObject dialogueBox;
     public CharacterRole role = CharacterRole.Normie;
+    public GameObject mask;
+    public GameObject badge;
+
+    Transform dialoguePoint => transform.GetChild(2);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,20 +58,23 @@ public class Character : MonoBehaviour
             GameManager.Instance.winCount++;
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && currentState == CharacterState.Ordering)
             currentState = CharacterState.MovingOut;
+
+        if (currentState == CharacterState.MovingOut && dialogueBox != null)
+            Destroy(dialogueBox);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        MoveIn();
-        MoveOut();
+        Move();
+        Talk();
     }
 
-    void MoveIn()
+    void Move()
     {
-        if (currentState != CharacterState.MovingIn) return;
+        if (currentState != CharacterState.MovingIn && currentState != CharacterState.MovingOut) return;
     
         stepTime += Time.fixedDeltaTime;
     
@@ -71,18 +87,67 @@ public class Character : MonoBehaviour
         rb.MovePosition(new Vector2(x, y));
     }
 
-    void MoveOut()
+    void Talk()
     {
-        if (currentState != CharacterState.MovingOut) return;
+        if (currentState == CharacterState.Ordering && !isTalking)
+        {
+            isTalking = true;
 
-        stepTime += Time.fixedDeltaTime;
+            SentenceSelector();
 
-        float wave = Mathf.Sin(stepTime * stepFrequency);
-        wave = wave * Mathf.Abs(wave);
+            dialogueBox = Instantiate(dialoguePrefab, dialoguePoint.position, Quaternion.identity, this.transform);
 
-        float y = baseY + wave * stepHeight;
-        float x = rb.position.x - walkSpeed * Time.fixedDeltaTime;
+            TextMeshPro textField = dialogueBox.transform.GetChild(0).GetComponent<TextMeshPro>();
+            textField.text = speech;
+        }
+    }
 
-        rb.MovePosition(new Vector2(x, y));
+    void SentenceSelector()
+    {
+        switch (role)
+        {
+            case CharacterRole.Normie:
+                {
+                    if (mask.gameObject.CompareTag("NormM"))
+                    {
+                        bool isNormalSpeech = Random.Range(0, 2) == 1;
+
+                        speech = isNormalSpeech
+                            ? dialogData.speech[Random.Range(0, dialogData.speech.Length)]
+                            : dialogData.abnormal[Random.Range(0, dialogData.abnormal.Length)];
+
+                    }
+                    else
+                        speech = dialogData.speech[Random.Range(0, dialogData.speech.Length)];
+
+                    break;
+                }
+            case CharacterRole.Gang:
+                {
+                    speech = dialogData.abnormal[Random.Range(0, dialogData.abnormal.Length)];
+
+                    break;
+                }
+            case CharacterRole.Police:
+                {
+                    int ranVal = Random.Range(0, 2);
+
+                    if (mask.gameObject.CompareTag("GangM"))
+                        speech = dialogData.speech[Random.Range(0, dialogData.speech.Length)];
+                    else
+                    {
+                        switch (ranVal)
+                        {
+                            case 0:
+                                speech = dialogData.speech[Random.Range(0, dialogData.speech.Length)];
+                                break;
+                            default:
+                                speech = dialogData.abnormal[Random.Range(0, dialogData.abnormal.Length)];
+                                break;
+                        }
+                    }
+                    break;
+                }
+        }
     }
 }
