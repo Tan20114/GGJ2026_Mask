@@ -1,21 +1,40 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CusWaitTimer : MonoBehaviour
 {
+    [SerializeField] bool debugMode = false;
     [SerializeField] float waitDuration = 5f;
     [SerializeField] GameObject boarder;
     private Image image;
     private bool db = false;
-    private bool isActive = false;
-    private Vector3 intialScale;
+    private bool isShinking = false;
+    //private bool isActive = false;
+    private Vector3 intialScale, intialBoarderScale;
+
+    [NonSerialized] public CusWaitState CurrentState;
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem finishParticle1;
+    [SerializeField] private ParticleSystem finishParticle2;
+
+    public enum CusWaitState
+    {
+        idle,
+        loading,
+        finished,
+        timeout
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         LeanTween.reset();
         image = GetComponent<Image>();
         intialScale = image.rectTransform.localScale;
+        intialBoarderScale = boarder.transform.localScale;
+        CurrentState = CusWaitState.idle;
         toggleActive(false);
         //Debug.Log(image.rectTransform.localScale);
 
@@ -24,30 +43,25 @@ public class CusWaitTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            if (db) return;
-
-            db = true;
-            StartTimer();
-            Debug.Log("Pressed");
-            db = false;
-        }
+        if (debugMode) DebugPlay();
     }
 
     void FixedUpdate()
     {
     }
-
+    #region Timer
     public void StartTimer()
     {
-        if(isActive) return;
+        if(CurrentState == CusWaitState.loading) return;
 
+        CurrentState = CusWaitState.loading;
         toggleActive(true);
 
         // Reset scale first
         image.rectTransform.localScale = intialScale;
         image.color = Color.green;
+
+        boarder.transform.localScale = intialBoarderScale;
 
         // Kill previous tweens (VERY important)
         LeanTween.cancel(image.gameObject);
@@ -61,20 +75,111 @@ public class CusWaitTimer : MonoBehaviour
         .setOnUpdate((Vector3 scale) =>
         {
             UpdateColor(scale.x);
+            if (!isShinking && scale.x <= 0.6)
+            {
+                isShinking = true;
+                ShrinksBoarder();
+            }
         })
         .setOnComplete(() =>
         {
             UpdateColor(0f);
             LeanTween.cancel(image.gameObject);
+            CurrentState = CusWaitState.timeout;
+            
+        });
+    }
+
+    private void ShrinksBoarder()
+    {
+
+        LeanTween.cancel(boarder);
+        LeanTween.scale(
+            boarder,
+            new Vector3(0, intialBoarderScale.y, intialBoarderScale.z),
+            2f
+        )
+        .setEase(LeanTweenType.easeInQuart)
+        .setOnComplete(() =>
+        {
+            LeanTween.cancel(boarder);
             toggleActive(false);
         });
     }
 
-    public void ReduceTimer(byte value)
+    public void ReduceTimer(float value)
     {
         waitDuration -= value;
     }
+    public void SetTimer(float value)
+    {
+        waitDuration = value;
+    }
+    public bool IsTimeOut()
+    {
+        if (CurrentState != CusWaitState.timeout) return false;
+        CurrentState = CusWaitState.idle;
+        return true;
+    }
+    public void Served()
+    {
+        if(CurrentState != CusWaitState.finished) return;
+        LeanTween.cancel(image.gameObject);
+        LeanTween.cancel(boarder);
 
+        image.color = start;
+
+        LeanTween.scale(
+            image.gameObject,
+            new Vector3(intialScale.x, intialScale.y, intialScale.z),
+            0.25f
+        )
+        .setEase(LeanTweenType.linear)
+        .setOnComplete(() =>
+        {
+            PlayFinishParticle();
+            LeanTween.cancel(image.gameObject);
+
+            LeanTween.scale(
+            image.gameObject,
+            new Vector3(intialScale.x, 0, intialScale.z),
+            0.25f
+            )
+            .setEase(LeanTweenType.linear)
+            .setOnComplete(() =>
+            {
+                CurrentState = CusWaitState.idle;
+                LeanTween.cancel(image.gameObject);
+                toggleActive(false);
+            });
+        });
+
+        LeanTween.scale(
+        boarder,
+        new Vector3(intialBoarderScale.x, intialBoarderScale.y, intialBoarderScale.z),
+        0.25f
+        )
+        .setEase(LeanTweenType.linear)
+        .setOnComplete(() =>
+        {
+            LeanTween.cancel(boarder);
+            LeanTween.scale(
+            boarder,
+            new Vector3(intialBoarderScale.x, 0, intialBoarderScale.z),
+            0.25f
+            )
+            .setEase(LeanTweenType.linear)
+            .setOnComplete(() =>
+            {
+                LeanTween.cancel(boarder);
+            });
+        });
+    }
+
+    #endregion
+
+    #region Color
+    [Header("Color Settings")]
     [SerializeField] Color start = Color.green;
     [SerializeField] Color mid = Color.yellow;
     [SerializeField] Color end = Color.red;
@@ -96,6 +201,7 @@ public class CusWaitTimer : MonoBehaviour
             image.color = Color.Lerp(mid, end, (t - 0.5f) * 2f);
         }
     }
+    #endregion
 
     private void toggleActive(bool value)
     {
@@ -105,13 +211,44 @@ public class CusWaitTimer : MonoBehaviour
         {
             image.color = image.color * 0f;
             boarder.GetComponent<Image>().color = Color.white * 0f;
-            isActive = false;
+            isShinking = false;
         }
         else
         {
             image.fillAmount = 0f;
-            isActive = true;
             boarder.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+    }
+
+    void PlayFinishParticle()
+    {
+        if (finishParticle1 == null || finishParticle2 == null) return;
+
+        finishParticle1.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        finishParticle1.Play();
+        finishParticle2.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        finishParticle2.Play();
+    }
+    
+    private void DebugPlay()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (db) return;
+
+            db = true;
+            StartTimer();
+            Debug.Log("Pressed");
+            db = false;
+        }
+
+        if (CurrentState == CusWaitState.loading)
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                CurrentState = CusWaitState.finished;
+                Served();
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Threading;
 
 public class FoodWaitTimer : MonoBehaviour
 {
+    [SerializeField] bool debugMode = false;
     [SerializeField] GameObject boarder;
     [SerializeField] float waitDuration = 5f;
     private Image img;
@@ -37,7 +38,7 @@ public class FoodWaitTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DebugPlay();
+        if (debugMode) DebugPlay();
     }
 
     private void FixedUpdate()
