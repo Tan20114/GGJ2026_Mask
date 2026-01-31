@@ -12,7 +12,10 @@ public class FoodWaitTimer : MonoBehaviour
     //private bool isActive = false;
     private Vector3 intialPos;
     public State CurrentState;
-    
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem finishParticle;
+
     public enum State
     {
         idle,
@@ -70,6 +73,7 @@ public class FoodWaitTimer : MonoBehaviour
             img.fillAmount = 1f;
             UpdateColor(1f);
             LeanTween.cancel(img.gameObject);
+
 
             if (!hasJumped)
             {
@@ -173,8 +177,17 @@ public class FoodWaitTimer : MonoBehaviour
     {
         if (CurrentState != State.finished) return false;
         
+        PlayFinishParticle();
         CurrentState = State.idle;
         return true;
+    }
+
+    void PlayFinishParticle()
+    {
+        if (finishParticle == null) return;
+
+        finishParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        finishParticle.Play();
     }
 
     private void DebugPlay()
