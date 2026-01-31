@@ -11265,7 +11265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8175fd740b8e3c4f901106a00c96cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CusWaitTimer
-  debugMode: 0
+  debugMode: 1
   waitDuration: 3
   boarder: {fileID: 2072578613}
   finishParticle1: {fileID: 1613273458}
