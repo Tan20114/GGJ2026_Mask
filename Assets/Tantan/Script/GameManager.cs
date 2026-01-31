@@ -1,14 +1,30 @@
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
+
+public enum Product
+{
+    None,
+    Chicken,
+    Beef,
+    Lamb,
+    Illegal
+}
 
 public class GameManager : Singleton<GameManager>
 {
     CusWaitTimer customerTimer => FindAnyObjectByType<CusWaitTimer>();
     CharacterSpawner spawner => FindAnyObjectByType<CharacterSpawner>();
+    CamMover mover => FindAnyObjectByType<CamMover>();
 
     public int winCount = 0;
     public int money = 0;
     [SerializeField] int bargainMoney = 15000;
     [Range(0,3)][SerializeField] int lifePoint = 3;
+
+    Product currentProduct;
+    public Product productToSell;
+
     public int LifePoint
     {
         get => lifePoint;
@@ -16,12 +32,6 @@ public class GameManager : Singleton<GameManager>
     }
 
     bool isTimerStart = false;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -32,10 +42,19 @@ public class GameManager : Singleton<GameManager>
         {
             isTimerStart = true;
             customerTimer.StartTimer();
-        }
+            int ranVal = Random.Range(0,4);
 
-        if (Input.GetKeyDown(KeyCode.O))
-            EndServing(true);
+            currentProduct = ranVal switch
+            {
+                0 => Product.Chicken,
+                1 => Product.Beef,
+                2 => Product.Lamb,
+                _ => Product.Chicken
+            };
+            
+            if (spawner.currentCharacter.role == CharacterRole.Gang)
+                currentProduct = Product.Illegal;
+        }
 
         if (customerTimer.IsTimeOut() && isTimerStart)
             EndServing(false);
@@ -44,6 +63,8 @@ public class GameManager : Singleton<GameManager>
     public void EndServing(bool isSuccess)
     {
         if (spawner.currentCharacter.currentState != CharacterState.Ordering) return;
+
+        mover.MoveToDefaultCam();
 
         customerTimer.CurrentState = CusWaitTimer.CusWaitState.finished;
         spawner.currentCharacter.currentState = CharacterState.MovingOut;
@@ -87,5 +108,22 @@ public class GameManager : Singleton<GameManager>
             Debug.Log("Missed Order! Life Point Decreased.");
             lifePoint--;
         }
+
+        isTimerStart = false;
     }
+
+    void Serve()
+    {
+        if(productToSell == currentProduct)
+            EndServing(true);
+        else if (productToSell != currentProduct)
+        {
+            if(productToSell == Product.Illegal)
+                MissOrder(true);
+            else
+                MissOrder(false);
+        }
+    }
+
+    void CancelCooking() => productToSell = Product.None;
 }

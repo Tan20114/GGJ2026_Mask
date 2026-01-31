@@ -79,6 +79,7 @@ public class CusWaitTimer : MonoBehaviour
             waitDuration
         )
         .setEase(LeanTweenType.linear)
+        .setIgnoreTimeScale(true)
         .setOnUpdate((Vector3 scale) =>
         {
             UpdateColor(scale.x);

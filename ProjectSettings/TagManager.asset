@@ -7,6 +7,10 @@ TagManager:
   - PoliceM
   - GangM
   - NormM
+  - MainCam
+  - BottomCam
+  - UpButton
+  - DownButton
   layers:
   - Default
   - TransparentFX
