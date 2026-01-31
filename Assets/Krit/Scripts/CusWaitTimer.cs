@@ -11,6 +11,7 @@ public class CusWaitTimer : MonoBehaviour
     private Image image;
     private bool db = false;
     private bool isShinking = false;
+    private bool isFillbarRunOut = false;
     //private bool isActive = false;
     private Vector3 intialScale, intialBoarderScale;
 
@@ -36,7 +37,6 @@ public class CusWaitTimer : MonoBehaviour
         intialBoarderScale = boarder.transform.localScale;
         CurrentState = CusWaitState.idle;
         toggleActive(false);
-        //Debug.Log(image.rectTransform.localScale);
 
     }
 
@@ -44,12 +44,16 @@ public class CusWaitTimer : MonoBehaviour
     void Update()
     {
         if (debugMode) DebugPlay();
+
+        //Debug.Log(CurrentState);
     }
 
     void FixedUpdate()
     {
     }
     #region Timer
+    private float targetScale = 0.6f;
+    private float scaleOffset = 0.05f;
     public void StartTimer()
     {
         if(CurrentState == CusWaitState.loading) return;
@@ -57,14 +61,17 @@ public class CusWaitTimer : MonoBehaviour
         CurrentState = CusWaitState.loading;
         toggleActive(true);
 
+        // Kill previous tweens (VERY important)
+        LeanTween.cancel(image.gameObject);
+        LeanTween.cancel(boarder.gameObject);
+
         // Reset scale first
         image.rectTransform.localScale = intialScale;
         image.color = Color.green;
 
         boarder.transform.localScale = intialBoarderScale;
+        boarder.GetComponent<Image>().color = new Color(1, 1, 1, 1);
 
-        // Kill previous tweens (VERY important)
-        LeanTween.cancel(image.gameObject);
 
         LeanTween.scale(
             image.gameObject,
@@ -75,18 +82,16 @@ public class CusWaitTimer : MonoBehaviour
         .setOnUpdate((Vector3 scale) =>
         {
             UpdateColor(scale.x);
-            if (!isShinking && scale.x <= 0.6)
+            if (!isShinking && scale.x <= targetScale)
             {
                 isShinking = true;
                 ShrinksBoarder();
             }
-        })
-        .setOnComplete(() =>
-        {
-            UpdateColor(0f);
-            LeanTween.cancel(image.gameObject);
-            CurrentState = CusWaitState.timeout;
-            
+            if (scale.x <= scaleOffset && !isFillbarRunOut)
+            {
+                OnFillbarRunOut();
+                //Debug.Log("Force Bar End");
+            }
         });
     }
 
@@ -94,10 +99,13 @@ public class CusWaitTimer : MonoBehaviour
     {
 
         LeanTween.cancel(boarder);
+
+        var time = targetScale * waitDuration;
+
         LeanTween.scale(
             boarder,
             new Vector3(0, intialBoarderScale.y, intialBoarderScale.z),
-            2f
+            time + 0.1f
         )
         .setEase(LeanTweenType.easeInQuart)
         .setOnComplete(() =>
@@ -105,6 +113,18 @@ public class CusWaitTimer : MonoBehaviour
             LeanTween.cancel(boarder);
             toggleActive(false);
         });
+
+
+    }
+
+    private void OnFillbarRunOut()
+    {
+        isFillbarRunOut = true;
+        UpdateColor(0f);
+        LeanTween.cancel(image.gameObject);
+        CurrentState = CusWaitState.timeout;
+        image.transform.localScale = new Vector3(0, intialScale.y, intialScale.z);
+        //Debug.Log("Time out");
     }
 
     public void ReduceTimer(float value)
@@ -207,16 +227,19 @@ public class CusWaitTimer : MonoBehaviour
     {
         //img.gameObject.SetActive(value);
         //boarder.SetActive(value);
+        //Debug.Log("toggled : " + value);
         if (!value)
         {
             image.color = image.color * 0f;
             boarder.GetComponent<Image>().color = Color.white * 0f;
-            isShinking = false;
+            //isShinking = false;
         }
         else
         {
+            isShinking = false;
+            isFillbarRunOut = false;
             image.fillAmount = 0f;
-            boarder.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            
         }
     }
 
@@ -238,7 +261,7 @@ public class CusWaitTimer : MonoBehaviour
 
             db = true;
             StartTimer();
-            Debug.Log("Pressed");
+            //Debug.Log("Pressed");
             db = false;
         }
 
