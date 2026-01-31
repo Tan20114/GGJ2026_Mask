@@ -7,6 +7,13 @@ public enum CharacterState
     Ordering
 }
 
+public enum CharacterRole
+{
+    Normie,
+    Gang,
+    Police
+}
+
 public class Character : MonoBehaviour
 {
     Rigidbody2D rb => GetComponent<Rigidbody2D>();
@@ -19,6 +26,7 @@ public class Character : MonoBehaviour
     float baseY;
 
     [SerializeField] CharacterState currentState = CharacterState.MovingIn;
+    public CharacterRole role = CharacterRole.Normie;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

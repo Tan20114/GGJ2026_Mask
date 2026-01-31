@@ -269,8 +269,12 @@ MonoBehaviour:
   - {fileID: 3288894829498608162, guid: a668de6a244906a438d2bd99db42b1fa, type: 3}
   - {fileID: 7057273495095238760, guid: b5cfda3b53d717d47a47d310ab37dd1c, type: 3}
   - {fileID: 7192314684880789703, guid: 102a410219914d742953e8fbce85ce7a, type: 3}
-  policeBadge: {fileID: 0}
+  policeBadge: {fileID: 292050348351641461, guid: 154044f637c7b194fb4b0208bd921151, type: 3}
   spawnPoint: {fileID: 1434806403}
+  currentCharacter: {fileID: 0}
+  NormiePity: 40
+  PolicePity: 40
+  GangPity: 20
 --- !u!1 &1404405149
 GameObject:
   m_ObjectHideFlags: 0

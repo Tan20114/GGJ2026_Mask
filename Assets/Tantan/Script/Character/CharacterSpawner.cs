@@ -9,22 +9,43 @@ public class CharacterSpawner : MonoBehaviour
 
     [Header("Reference")]
     [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform endPoint;
     Transform maskPoint;
+    Transform badgePoint;
+
+    [Header("Parameter")]
+    public Character currentCharacter;
+    [SerializeField] float NormiePity = 40;
+    [SerializeField] float PolicePity = 20;
+    [SerializeField] float GangPity = 20;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpawnCharacter();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(currentCharacter == null)
+        {
+            NewCustomer();
+        }
+
+        if(currentCharacter.transform.position.x <= endPoint.position.x)
+        {
+            Destroy(currentCharacter.gameObject);
+            currentCharacter = null;
+        }
     }
 
-    GameObject SpawnCharacter()
+    Character SpawnCharacter()
     {
-        GameObject charToSpawn = charList[Random.Range(0, charList.Length)];
+        int RanVal = Random.Range(0, charList.Length * 10);
+        int characterIndex = RanVal % 8;
+
+        GameObject charToSpawn = charList[characterIndex];
         SpriteRenderer charSR = charToSpawn.GetComponent<SpriteRenderer>();
 
         float offsetY = charSR.bounds.size.y / 2;
@@ -33,10 +54,40 @@ public class CharacterSpawner : MonoBehaviour
 
         GameObject spawnedChar = Instantiate(charToSpawn, spawnPos, Quaternion.identity);
 
-        maskPoint = spawnedChar.transform.GetChild(0);
+        return spawnedChar.GetComponent<Character>();
+    }
 
-        Instantiate(maskList[Random.Range(0, maskList.Length)], maskPoint.transform.position, Quaternion.identity,spawnedChar.transform);
+    void RandomRole(GameObject spawned)
+    {
+        float totalpity = NormiePity + PolicePity + GangPity;
 
-        return spawnedChar;
+        float rand = Random.Range(0, totalpity);
+        maskPoint = spawned.transform.GetChild(0);
+        badgePoint = spawned.transform.GetChild(1);
+
+        if (rand <= NormiePity)
+        {
+            currentCharacter.role = CharacterRole.Normie;
+
+            Instantiate(maskList[Random.Range(0, maskList.Length - 1)], maskPoint.transform.position, Quaternion.identity, spawned.transform);
+        }
+        else if (rand <= NormiePity + GangPity)
+        {
+            currentCharacter.role = CharacterRole.Gang;
+
+            Instantiate(maskList[2], maskPoint.transform.position, Quaternion.identity, spawned.transform);
+        }
+        else
+        {
+            Instantiate(policeBadge, badgePoint.position, Quaternion.identity, spawned.transform);
+
+            currentCharacter.role = CharacterRole.Police;
+        }
+    }
+
+    void NewCustomer()
+    {
+        currentCharacter = SpawnCharacter();
+        RandomRole(currentCharacter.gameObject);
     }
 }
