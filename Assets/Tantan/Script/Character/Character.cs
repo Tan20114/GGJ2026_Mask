@@ -97,10 +97,10 @@ public class Character : MonoBehaviour
 
             string result = speech;
 
-            if (result.Contains("(food)"))
+            if (speech.Contains("(food)"))
             {
                 Debug.Log("Replacing food placeholder");
-                result = result.Replace("(food)", food);
+                result = speech.Replace("(food)", food);
             }
 
             textField.text = result;
