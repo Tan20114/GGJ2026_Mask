@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public enum CharacterState
 {
@@ -89,8 +90,58 @@ public class Character : MonoBehaviour
             dialogueBox = Instantiate(dialoguePrefab, dialoguePoint.position, Quaternion.identity, this.transform);
 
             TextMeshPro textField = dialogueBox.transform.GetChild(0).GetComponent<TextMeshPro>();
-            textField.text = speech;
+
+            string food = "";
+
+            food = StringifyFood();
+
+            string result = speech;
+
+            if (result.Contains("(food)"))
+            {
+                Debug.Log("Replacing food placeholder");
+                result = result.Replace("(food)", food);
+            }
+
+            textField.text = result;
         }
+    }
+
+    string StringifyFood()
+    {
+        Debug.Log("Replaced");
+
+        string foodString = "";
+
+        switch (GameManager.Instance.currentProduct)
+        {
+            case Product.Chicken:
+                foodString = "chicken sharwama";
+                break;
+            case Product.Beef:
+                foodString = "beef sharwama";
+                break;
+            case Product.Lamb:
+                foodString = "lamb sharwama";
+                break;
+            case Product.Illegal:
+                int ranVal = Random.Range(0, 3);
+                switch (ranVal)
+                {
+                    case 0:
+                        foodString = "chicken sharwama";
+                        break;
+                    case 1:
+                        foodString = "beef sharwama";
+                        break;
+                    case 2:
+                        foodString = "lamb sharwama";
+                        break;
+                }
+                break;
+        }
+
+        return foodString;
     }
 
     void SentenceSelector()

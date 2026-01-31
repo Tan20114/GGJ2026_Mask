@@ -14,6 +14,7 @@ public enum Product
 public class GameManager : Singleton<GameManager>
 {
     CusWaitTimer customerTimer => FindAnyObjectByType<CusWaitTimer>();
+    FoodWaitTimer foodTimer => FindAnyObjectByType<FoodWaitTimer>();
     CharacterSpawner spawner => FindAnyObjectByType<CharacterSpawner>();
     CamMover mover => FindAnyObjectByType<CamMover>();
 
@@ -22,7 +23,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] int bargainMoney = 15000;
     [Range(0,3)][SerializeField] int lifePoint = 3;
 
-    Product currentProduct;
+    public Product currentProduct;
     public Product productToSell;
 
     public int LifePoint
@@ -58,6 +59,9 @@ public class GameManager : Singleton<GameManager>
 
         if (customerTimer.IsTimeOut() && isTimerStart)
             EndServing(false);
+
+        if (foodTimer.FinishCook())
+            Serve();
     }
 
     public void EndServing(bool isSuccess)
@@ -114,7 +118,7 @@ public class GameManager : Singleton<GameManager>
 
     void Serve()
     {
-        if(productToSell == currentProduct)
+        if (productToSell == currentProduct)
             EndServing(true);
         else if (productToSell != currentProduct)
         {
@@ -125,5 +129,5 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    void CancelCooking() => productToSell = Product.None;
+    public void CancelCooking() => productToSell = Product.None;
 }
