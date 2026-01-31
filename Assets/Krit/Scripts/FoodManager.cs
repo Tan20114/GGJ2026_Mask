@@ -19,6 +19,7 @@ public class FoodManager : MonoBehaviour
     [SerializeField] LeanTweenType easeType = LeanTweenType.easeInOutSine;
     [SerializeField] float scaleSize = 1.1f;
     [SerializeField] float animDuration = 0.3f;
+    //[SerializeField] Image outline;
     private Vector3 intialScale;
     private Vector3 intialPos;
 
@@ -42,7 +43,7 @@ public class FoodManager : MonoBehaviour
     public void SelectObject(GameObject item)
     {
         if (isCooking) return;
-        if (SelectedFood != null) SelectedFood.GetComponent<Outline>().enabled = false;
+        if (SelectedFood != null) SelectedFood.transform.GetChild(0).gameObject.SetActive(false);
 
         if (SelectedFood == item)
         {
@@ -54,7 +55,7 @@ public class FoodManager : MonoBehaviour
             haveSelected = true;
         }
 
-        if (SelectedFood != null)  SelectedFood.GetComponent<Outline>().enabled = haveSelected;
+        if (SelectedFood != null) SelectedFood.transform.GetChild(0).gameObject.SetActive(haveSelected);
         //Debug.Log("Selected Food: " + SelectedFood);
         //Debug.Log("Have Selected?: " + haveSelected);
     }
@@ -62,7 +63,7 @@ public class FoodManager : MonoBehaviour
     private void UnSelectObject()
     {
         if (SelectedFood == null) return;
-        SelectedFood.GetComponent<Outline>().enabled = false;
+        SelectedFood.transform.GetChild(0).gameObject.SetActive(false);
         haveSelected = false;
         SelectedFood = null;
     }
