@@ -14,26 +14,19 @@ public class LeaningBehavior : MonoBehaviour
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0f;
 
-        float dir = Mathf.Sign(mouseWorld.x);
-
-        // No rotation near center
-        if (dir == 0f)
-            return;
-
         float t = TCalculator(mouseWorld.x);
-
-        float targetAngle = Mathf.Lerp(minAngle, maxAngle, t) * dir;
+        Debug.Log(t);
 
         // Lerp ANGLE, not quaternion
-        currentY = Mathf.Lerp(currentY, targetAngle, Time.deltaTime * smooth);
+        currentY = Mathf.Lerp(minAngle, maxAngle, t);
 
         transform.rotation = Quaternion.Euler(0f, currentY, 0f);
     }
 
     float TCalculator(float mouseX)
     {
-        float distance = Mathf.Abs(mouseX);
-        return Mathf.Clamp01(distance / maxDistance);
+        float normalized = Mathf.Clamp(mouseX / maxDistance, -1f, 1f);
+        return normalized * 0.5f + 0.5f;
     }
 
 }
