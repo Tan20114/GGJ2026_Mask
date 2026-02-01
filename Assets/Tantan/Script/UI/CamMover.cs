@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CamMover : MonoBehaviour
 {
+
     [SerializeField] CanvasGroup foodSection;
     [SerializeField] CanvasGroup upperSection;
     [SerializeField] GameObject upButton;
@@ -11,6 +12,7 @@ public class CamMover : MonoBehaviour
     CinemachineCamera camera;
     public void MoveToCam(CinemachineCamera cam)
     {
+
         if (camera != null)
         {
             camera.Priority = 0;
@@ -23,6 +25,7 @@ public class CamMover : MonoBehaviour
 
     public void MoveToDefaultCam()
     {
+
         if (camera != null)
         {
             camera.Priority = 0;

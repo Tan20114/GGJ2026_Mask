@@ -20,6 +20,8 @@ public class Viisualizer : MonoBehaviour
     [SerializeField] Image endImage;
     [SerializeField] GameObject endScreen;
 
+    [SerializeField] Button downButton;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +31,11 @@ public class Viisualizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!spawner.isStart)
+            downButton.interactable = false;
+        else
+            downButton.interactable = true;
+
         CountServed();
         CookingVisual();
         LifeVisual();
