@@ -69,6 +69,8 @@ public class Viisualizer : MonoBehaviour
         if (!GameManager.Instance.isGameOver) return;
         if (endScreen.activeSelf) return;
 
+        EndGame();
+
         endImage.sprite = endTemplate[GameManager.Instance.isPoliced ? 1 : 0];
         endScreen.SetActive(true);
     }

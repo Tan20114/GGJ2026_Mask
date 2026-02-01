@@ -107,6 +107,7 @@ public class GameManager : Singleton<GameManager>
         mover.MoveToDefaultCam();
 
         customerTimer.CurrentState = CusWaitTimer.CusWaitState.finished;
+        customerTimer.CancleTimer();
         spawner.currentCharacter.currentState = CharacterState.MovingOut;
         if (spawner.currentCharacter.role == CharacterRole.Police && isIllegal)
         {
