@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -13,6 +14,12 @@ public class Viisualizer : MonoBehaviour
 
     [SerializeField] Animator[] hearts;
 
+    [SerializeField] TextMeshProUGUI servedCountTxt;
+
+    [SerializeField] Sprite[] endTemplate;
+    [SerializeField] Image endImage;
+    [SerializeField] GameObject endScreen;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,8 +29,10 @@ public class Viisualizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CountServed();
         CookingVisual();
         LifeVisual();
+        ShowEnd();
     }
 
     void CookingVisual()
@@ -50,5 +59,17 @@ public class Viisualizer : MonoBehaviour
         }
     }
 
+    void CountServed() => servedCountTxt.text = GameManager.Instance.winCount.ToString();
+
     public void StartGame() => spawner.isStart = true;
+    public void EndGame() => spawner.isStart = false;
+
+    void ShowEnd()
+    {
+        if (!GameManager.Instance.isGameOver) return;
+        if (endScreen.activeSelf) return;
+
+        endImage.sprite = endTemplate[GameManager.Instance.isPoliced ? 1 : 0];
+        endScreen.SetActive(true);
+    }
 }

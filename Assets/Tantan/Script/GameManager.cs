@@ -24,7 +24,8 @@ public class GameManager : Singleton<GameManager>
     public int money = 0;
     [SerializeField] int bargainMoney = 15000;
     [Range(0,3)][SerializeField] int lifePoint = 3;
-    bool isPoliced = false;
+    public bool isPoliced = false;
+    public bool isGameOver = false;
 
     public Product currentProduct;
     public Product productToSell;
@@ -44,7 +45,7 @@ public class GameManager : Singleton<GameManager>
         if (!spawner.currentCharacter) return;
 
         DifficultyCurve();
-        GameOver(isPoliced);
+        GameOver();
 
         if (spawner.currentCharacter.currentState == CharacterState.Ordering && !isTimerStart)
         {
@@ -141,11 +142,10 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    void GameOver(bool isPoliced)
+    void GameOver()
     {
-        if (lifePoint > 0) return;
-
-        sl.Load(isPoliced ? 5 : 4);
+        if (lifePoint <= 0)
+            isGameOver = true;
     }
 
     void Serve()
