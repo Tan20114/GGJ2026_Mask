@@ -17,6 +17,10 @@ public class FoodWaitTimer : MonoBehaviour
     [Header("Particles")]
     [SerializeField] private ParticleSystem finishParticle;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip startSfx;
+    [SerializeField] AudioClip finishSfx;
+
     public enum State
     {
         idle,
@@ -53,7 +57,8 @@ public class FoodWaitTimer : MonoBehaviour
 
         toggleActive(true);
         hasJumped = false;
-        
+        SoundFXManager.instance.PlaySoundFXClip(startSfx);
+
 
         LeanTween.cancel(img.gameObject);
 
@@ -179,6 +184,7 @@ public class FoodWaitTimer : MonoBehaviour
         if (CurrentState != State.finished) return false;
         
         PlayFinishParticle();
+        SoundFXManager.instance.PlaySoundFXClip(finishSfx);
         CurrentState = State.idle;
         return true;
     }

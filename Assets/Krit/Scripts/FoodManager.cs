@@ -23,6 +23,9 @@ public class FoodManager : MonoBehaviour
     private Vector3 intialScale;
     private Vector3 intialPos;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip clikSfx;
+
     public enum SereveState
     {
         notReady,
@@ -44,6 +47,8 @@ public class FoodManager : MonoBehaviour
     {
         if (isCooking) return;
         if (SelectedFood != null) SelectedFood.transform.GetChild(0).gameObject.SetActive(false);
+
+        SoundFXManager.instance.PlaySoundFXClip(clikSfx);
 
         if (SelectedFood == item)
         {

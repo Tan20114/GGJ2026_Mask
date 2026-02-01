@@ -21,6 +21,10 @@ public class CusWaitTimer : MonoBehaviour
     [SerializeField] private ParticleSystem finishParticle1;
     [SerializeField] private ParticleSystem finishParticle2;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip correctSfx;
+    [SerializeField] AudioClip wrongSfx;
+
     public enum CusWaitState
     {
         idle,
@@ -166,6 +170,7 @@ public class CusWaitTimer : MonoBehaviour
         if(CurrentState != CusWaitState.finished) return;
         LeanTween.cancel(image.gameObject);
         LeanTween.cancel(boarder);
+        SoundFXManager.instance.PlaySoundFXClip(correctSfx);
 
         image.color = start;
 
@@ -225,6 +230,7 @@ public class CusWaitTimer : MonoBehaviour
         LeanTween.cancel(boarder);
         toggleActive(true);
         image.color = end;
+        SoundFXManager.instance.PlaySoundFXClip(wrongSfx);
 
         isShinking = true;
         ShrinksBoarder(cancleDuration + 0.1f);
