@@ -262,6 +262,7 @@ MonoBehaviour:
   BG: {fileID: 8254651140874889533}
   outline: {fileID: 3728285554658295553}
   text: {fileID: 6059034023136253452}
+  clickSfx: {fileID: 8300000, guid: 2c36256132f9cd44ba316c6e423c7cc3, type: 3}
   globalVolume: {fileID: 0}
   foucsDistance: 0.2
   targetTrans: {fileID: 8937307675203946542}

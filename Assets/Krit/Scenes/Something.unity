@@ -308,6 +308,7 @@ MonoBehaviour:
   BG: {fileID: 284924693}
   outline: {fileID: 1100472404}
   text: {fileID: 1311154096}
+  clickSfx: {fileID: 0}
   globalVolume: {fileID: 0}
   foucsDistance: 0.2
   targetTrans: {fileID: 99233152}
@@ -546,6 +547,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 367047647}
     m_Modifications:
+    - target: {fileID: 755550241000267661, guid: b8bb8952ca581784f98adb8ff10924c8, type: 3}
+      propertyPath: clickSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c36256132f9cd44ba316c6e423c7cc3, type: 3}
     - target: {fileID: 3226851786328301004, guid: b8bb8952ca581784f98adb8ff10924c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11170,6 +11175,8 @@ MonoBehaviour:
   boarder: {fileID: 2072578613}
   finishParticle1: {fileID: 1613273458}
   finishParticle2: {fileID: 407528628}
+  correctSfx: {fileID: 8300000, guid: 425d824c5a33fe9448d86f926ff350d0, type: 3}
+  wrongSfx: {fileID: 8300000, guid: 4f59e84544db8a948a819e97d95dc556, type: 3}
   targetScale: 0.6
   start: {r: 0, g: 1, b: 0, a: 1}
   mid: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -11966,6 +11973,8 @@ MonoBehaviour:
   waitDuration: 5
   CurrentState: 0
   finishParticle: {fileID: 540134157}
+  startSfx: {fileID: 8300000, guid: b004b929d7c547a459025dd2faa89cbe, type: 3}
+  finishSfx: {fileID: 8300000, guid: c2f1ab7385af66642b893d28aaf89695, type: 3}
   start: {r: 0, g: 0.36552286, b: 1, a: 1}
   end: {r: 0.025627732, g: 1, b: 0, a: 1}
   jumpHeight: 20
@@ -12143,6 +12152,7 @@ MonoBehaviour:
   easeType: 15
   scaleSize: 1.1
   animDuration: 0.2
+  clikSfx: {fileID: 8300000, guid: f9dc12489aacfc5438a4a6160693f75d, type: 3}
 --- !u!1 &1613273455
 GameObject:
   m_ObjectHideFlags: 0
