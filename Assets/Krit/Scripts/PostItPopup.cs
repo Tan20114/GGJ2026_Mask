@@ -50,6 +50,7 @@ public class PostItPopup : MonoBehaviour
         BG.SetActive(!BG.activeSelf);
         text.SetActive(!text.activeSelf);
         PopAnimation();
+        ToggleBackgroundUI();
     }
     
     public void ToggleBackgroundUI()

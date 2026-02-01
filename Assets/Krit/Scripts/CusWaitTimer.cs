@@ -52,7 +52,8 @@ public class CusWaitTimer : MonoBehaviour
     {
     }
     #region Timer
-    private float targetScale = 0.6f;
+    [Header("Timer")]
+    [SerializeField] float targetScale = 0.6f;
     private float scaleOffset = 0.05f;
     public void StartTimer()
     {
