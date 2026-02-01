@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa99afdb01b6f04090d26c2817ce15c, type: 3}
+  m_Name: DialogueList
+  m_EditorClassIdentifier: Assembly-CSharp::Dialog
+  speech:
+  - One {0}, please.
+  - One {0}, no onions please.
+  - One {0} wrap.
+  - Can I get a {0}?
+  - Sup man, I want a {0}.
+  - '{0}, extra garlic sauce, please.'
+  - Can I get a {0} with extra garlic sauce?
+  - One large {0}, please.
+  - '{0}, extra spicy sauce.'
+  - Can I get a {0} with extra hot sauce?
+  - I want a {0} with extra meat.
+  - "Yo, gimme a {0}. Extra meat. Don\u2019t mess it up."
+  - Yo boss, {0}. Make it heavy.
+  - I want a big black {0}.
+  - Sup man, lemme get a {0} with extra garlic sauce.
+  - I want real {0}, like a real dragon warrior.
+  - I want {0}.
+  abnormal:
+  - One Sigma Roll.
+  - Same way you did it last time.
+  - One shawarma without shawarma.
+  - "I\u2019d like a veggie shawarma, please."
+  - Can I get a vegetarian shawarma?
+  - Same way you did it last time.
+  - One pork shawarma with extra meat.
+  - '{0}, but just the wrap nothing inside.'
+  - '{0} with no bread.'
+  - '{0}, no sauce just ketchup.'
+  - '{0}, with extra ketchup.'
+  - "{0}, no bread. I\u2019ll eat it with rice."
+  - One {0}, extra soy sauce, please.
+  - '{0}, no hot sauce, please.'
+  - Can I get a {0} with no spicy sauce?
+  - '{0}, no garlic sauce.'
+  - '{0} with ketchup instead of garlic sauce, please.'
+  - '{0}, no pickles please.'

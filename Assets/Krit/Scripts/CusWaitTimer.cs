@@ -21,6 +21,10 @@ public class CusWaitTimer : MonoBehaviour
     [SerializeField] private ParticleSystem finishParticle1;
     [SerializeField] private ParticleSystem finishParticle2;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip correctSfx;
+    [SerializeField] AudioClip wrongSfx;
+
     public enum CusWaitState
     {
         idle,
@@ -52,7 +56,8 @@ public class CusWaitTimer : MonoBehaviour
     {
     }
     #region Timer
-    private float targetScale = 0.6f;
+    [Header("Timer")]
+    [SerializeField] float targetScale = 0.6f;
     private float scaleOffset = 0.05f;
     public void StartTimer()
     {
@@ -79,6 +84,7 @@ public class CusWaitTimer : MonoBehaviour
             waitDuration
         )
         .setEase(LeanTweenType.linear)
+        .setIgnoreTimeScale(true)
         .setOnUpdate((Vector3 scale) =>
         {
             UpdateColor(scale.x);
@@ -113,8 +119,26 @@ public class CusWaitTimer : MonoBehaviour
             LeanTween.cancel(boarder);
             toggleActive(false);
         });
+    }
 
+    private void ShrinksBoarder(float duration)
+    {
 
+        LeanTween.cancel(boarder);
+
+        var time = targetScale * waitDuration;
+
+        LeanTween.scale(
+            boarder,
+            new Vector3(0, intialBoarderScale.y, intialBoarderScale.z),
+            duration
+        )
+        .setEase(LeanTweenType.easeInQuart)
+        .setOnComplete(() =>
+        {
+            LeanTween.cancel(boarder);
+            toggleActive(false);
+        });
     }
 
     private void OnFillbarRunOut()
@@ -146,6 +170,7 @@ public class CusWaitTimer : MonoBehaviour
         if(CurrentState != CusWaitState.finished) return;
         LeanTween.cancel(image.gameObject);
         LeanTween.cancel(boarder);
+        SoundFXManager.instance.PlaySoundFXClip(correctSfx);
 
         image.color = start;
 
@@ -194,6 +219,36 @@ public class CusWaitTimer : MonoBehaviour
                 LeanTween.cancel(boarder);
             });
         });
+    }
+
+    private float cancleDuration = 0.2f;
+    public void CancleTimer()
+    {
+        if (CurrentState == CusWaitState.idle) return;
+        CurrentState = CusWaitState.idle;
+        LeanTween.cancel(image.gameObject);
+        LeanTween.cancel(boarder);
+        toggleActive(true);
+        image.color = end;
+        SoundFXManager.instance.PlaySoundFXClip(wrongSfx);
+
+        isShinking = true;
+        ShrinksBoarder(cancleDuration + 0.1f);
+
+        LeanTween.scale(
+            image.gameObject,
+            new Vector3(0, intialBoarderScale.x, intialBoarderScale.z),
+            cancleDuration
+            )
+            .setEase(LeanTweenType.linear)
+            .setOnUpdate((Vector3 scale) =>
+            {
+                if (scale.x <= scaleOffset && !isFillbarRunOut)
+                {
+                    OnFillbarRunOut();
+                    //Debug.Log("Force Bar End");
+                }
+            });
     }
 
     #endregion
@@ -253,7 +308,7 @@ public class CusWaitTimer : MonoBehaviour
         finishParticle2.Play();
     }
     
-    private void DebugPlay()
+    public void DebugPlay()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -271,6 +326,11 @@ public class CusWaitTimer : MonoBehaviour
             {
                 CurrentState = CusWaitState.finished;
                 Served();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                CancleTimer();
             }
         }
     }

@@ -4,8 +4,8 @@ using UnityEngine.Rendering;
 
 public class MasterVolume : HoverChecker
 {
-    private byte _volume = 100;
-    public byte Volume {
+    private static byte _volume = 100;
+    public static byte Volume {
         get => _volume;
         set => _volume = (byte)Mathf.Clamp(value, 0, 100);
     }

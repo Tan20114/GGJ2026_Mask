@@ -10,6 +10,7 @@ public class PostItPopup : MonoBehaviour
     [SerializeField] GameObject BG;
     [SerializeField] Outline outline;
     [SerializeField] GameObject text;
+    [SerializeField] AudioClip clickSfx;
 
     private bool isActive = false;
 
@@ -25,6 +26,7 @@ public class PostItPopup : MonoBehaviour
     [SerializeField] float animDuration = 1f;
     private Vector3 intialPos;
     private Vector3 intialScale;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,10 +48,13 @@ public class PostItPopup : MonoBehaviour
     {
         isActive = !isActive;
 
+        SoundFXManager.instance.PlaySoundFXClip(clickSfx);
+
         postit.SetActive(!postit.activeSelf);
         BG.SetActive(!BG.activeSelf);
         text.SetActive(!text.activeSelf);
         PopAnimation();
+        ToggleBackgroundUI();
     }
     
     public void ToggleBackgroundUI()

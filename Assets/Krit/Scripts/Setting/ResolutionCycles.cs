@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class ResolutionCycles : HoverChecker
@@ -13,31 +14,24 @@ public class ResolutionCycles : HoverChecker
         new Vector2Int(1280, 720),
         new Vector2Int(1360, 768),
         new Vector2Int(1366, 768),
+        new Vector2Int(1440, 900),
         new Vector2Int(1600, 900),
         new Vector2Int(1920, 1080),
-        new Vector2Int(2560, 1440),
-        new Vector2Int(3840, 2160)
+        new Vector2Int(2560, 1440)
     };
 
     private int index = 0;
     private int maxIndex;
-    private Vector2Int masRes;
+    private Vector2Int maxRes;
 
     protected override void Start()
     {
         base.Start();
-        UpdateText();
-        masRes = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
-        for (int i = 0; i < resolutions.Length - 1; i++)
-        {
-            if (resolutions[i].x == Screen.currentResolution.width && resolutions[i].y == Screen.currentResolution.height)
-            {
-                maxIndex = i;
-                index = i;
-                break;
-            }
-        }
-        //Debug.Log("Resolution" + masRes);
+        maxRes = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+        //maxRes = new Vector2Int(699, 256);
+
+        CheckForResolution();
+        //Debug.Log("Resolution" + maxRes);
         //Debug.Log("Max Index : " + maxIndex + "/ index :" + index);
         UpdateText();
     }
@@ -87,5 +81,36 @@ public class ResolutionCycles : HoverChecker
         TMPtext.text = "Resolution : " + resolutions[index].x + " x " + resolutions[index].y;
     }
 
-    
+    private void CheckForResolution()
+    {
+        for (int i = 0; i < resolutions.Length - 1; i++)
+        {
+            if (resolutions[i].x == maxRes.x && resolutions[i].y == maxRes.y)
+            {
+                maxIndex = i;
+                index = i;
+                break;
+            }
+        }
+        if (resolutions[index].x != maxRes.x || resolutions[index].y != maxRes.y)
+        {
+            CheckOutOfBoundRes();
+        }
+    }
+
+    private void CheckOutOfBoundRes()
+    {
+        Debug.Log("Player Don't have resolution in preset");
+        for (int i = resolutions.Length - 1; i >= 0; i--)
+        {
+            Debug.Log($"Checking index {i}: {resolutions[i].x}x{resolutions[i].y}");
+            if (maxRes.x >= resolutions[i].x &&
+                maxRes.y >= resolutions[i].y)   
+            {
+                maxIndex = i;
+                index = i;
+                break;
+            }
+        }
+    }
 }
