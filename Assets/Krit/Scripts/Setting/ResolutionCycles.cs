@@ -13,10 +13,10 @@ public class ResolutionCycles : HoverChecker
         new Vector2Int(1280, 720),
         new Vector2Int(1360, 768),
         new Vector2Int(1366, 768),
-        new Vector2Int(1440, 900),
         new Vector2Int(1600, 900),
         new Vector2Int(1920, 1080),
-        new Vector2Int(2560, 1440)
+        new Vector2Int(2560, 1440),
+        new Vector2Int(3840, 2160)
     };
 
     private int index = 0;
@@ -37,8 +37,8 @@ public class ResolutionCycles : HoverChecker
                 break;
             }
         }
-        Debug.Log("Resolution" + masRes);
-        Debug.Log("Max Index : " + maxIndex + "/ index :" + index);
+        //Debug.Log("Resolution" + masRes);
+        //Debug.Log("Max Index : " + maxIndex + "/ index :" + index);
         UpdateText();
     }
 
