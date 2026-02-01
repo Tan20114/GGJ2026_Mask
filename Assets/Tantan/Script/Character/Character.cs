@@ -145,7 +145,7 @@ public class Character : MonoBehaviour
 
                         speech = isNormalSpeech
                             ? dialogData.speech[Random.Range(0, dialogData.speech.Length)]
-                            : dialogData.abnormal[Random.Range(0, dialogData.abnormal.Length)];
+                            : dialogData.abnormal[Random.Range(7, dialogData.abnormal.Length)];
 
                     }
                     else
@@ -173,7 +173,7 @@ public class Character : MonoBehaviour
                                 speech = dialogData.speech[Random.Range(0, dialogData.speech.Length)];
                                 break;
                             default:
-                                speech = dialogData.abnormal[Random.Range(0, dialogData.abnormal.Length)];
+                                speech = dialogData.abnormal[Random.Range(7, dialogData.abnormal.Length)];
                                 break;
                         }
                     }

@@ -5,12 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Krit/Scenes/Main Menu.unity
+    guid: dd9a4aaa57b64db438e46c4190ee39d5
   - enabled: 1
     path: Assets/Krit/Scenes/Setting.unity
     guid: 419a0babab2be6e4ca8e459588b8d121
+  - enabled: 1
+    path: Assets/Scenes/MainGame.unity
+    guid: ec295e3fc92aac845b00dd63fc905388
+  - enabled: 1
+    path: Assets/Tantan/Scene/Credit.unity
+    guid: c8862307aecff5441b3bd0967928c393
+  - enabled: 1
+    path: Assets/Tantan/Scene/End1.unity
+    guid: b8e6d59ae492e994692e38bf5e603410
+  - enabled: 1
+    path: Assets/Tantan/Scene/End2.unity
+    guid: d7b370414fb8ca648a05f5e7a9077e9f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

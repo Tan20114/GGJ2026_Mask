@@ -13,6 +13,7 @@ public enum Product
 
 public class GameManager : Singleton<GameManager>
 {
+    SceneLoader sl => FindAnyObjectByType<SceneLoader>();
     public CusWaitTimer customerTimer => FindAnyObjectByType<CusWaitTimer>();
     public FoodWaitTimer foodTimer => FindAnyObjectByType<FoodWaitTimer>();
     FoodManager fm => FindAnyObjectByType<FoodManager>();
@@ -23,6 +24,7 @@ public class GameManager : Singleton<GameManager>
     public int money = 0;
     [SerializeField] int bargainMoney = 15000;
     [Range(0,3)][SerializeField] int lifePoint = 3;
+    bool isPoliced = false;
 
     public Product currentProduct;
     public Product productToSell;
@@ -39,6 +41,10 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
         //customerTimer.DebugPlay();
+        if (!spawner.currentCharacter) return;
+
+        DifficultyCurve();
+        GameOver(isPoliced);
 
         if (spawner.currentCharacter.currentState == CharacterState.Ordering && !isTimerStart)
         {
@@ -97,9 +103,12 @@ public class GameManager : Singleton<GameManager>
 
     public void MissOrder(bool isIllegal)
     {
+        mover.MoveToDefaultCam();
+
+        customerTimer.CurrentState = CusWaitTimer.CusWaitState.finished;
+        spawner.currentCharacter.currentState = CharacterState.MovingOut;
         if (spawner.currentCharacter.role == CharacterRole.Police && isIllegal)
         {
-            mover.MoveToDefaultCam();
 
             if (money >= bargainMoney)
             {
@@ -122,6 +131,21 @@ public class GameManager : Singleton<GameManager>
         isTimerStart = false;
         fm.CancelCooking();
         productToSell = Product.None;
+    }
+
+    void DifficultyCurve()
+    {
+        if (winCount % 10 == 0 && winCount != 0)
+        {
+            customerTimer.SetTimer(25 - (int)(winCount / 10));
+        }
+    }
+
+    void GameOver(bool isPoliced)
+    {
+        if (lifePoint > 0) return;
+
+        sl.Load(isPoliced ? 5 : 4);
     }
 
     void Serve()

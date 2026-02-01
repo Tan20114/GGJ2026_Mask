@@ -1,0 +1,33 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneLoader : MonoBehaviour
+{
+    [SerializeField] Animator transAnimator;
+    [SerializeField] float animTime = 1f;
+
+    public IEnumerator LoadScene(int index)
+    {
+        transAnimator.SetTrigger("SceneOut");
+        yield return new WaitForSecondsRealtime(animTime);
+        SceneManager.LoadScene(index);
+    }
+
+    public IEnumerator ExitGame()
+    {
+        transAnimator.SetTrigger("Exit");
+        yield return new WaitForSecondsRealtime(animTime);
+        Application.Quit();
+    }
+
+    public void Load(int index)
+    {
+        StartCoroutine(LoadScene(index));
+    }
+
+    public void Exit()
+    {
+        StartCoroutine(ExitGame());
+    }
+}

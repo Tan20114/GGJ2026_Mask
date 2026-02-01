@@ -4,6 +4,7 @@ using UnityEngine;
 public class CamMover : MonoBehaviour
 {
     [SerializeField] CanvasGroup foodSection;
+    [SerializeField] CanvasGroup upperSection;
     [SerializeField] GameObject upButton;
     [SerializeField] GameObject downButton;
 
@@ -31,6 +32,7 @@ public class CamMover : MonoBehaviour
         camera.Priority = 10;
 
         foodSection.alpha = 0;
+        upperSection.alpha = 1;
         upButton.SetActive(false);
         downButton.SetActive(true);
     }

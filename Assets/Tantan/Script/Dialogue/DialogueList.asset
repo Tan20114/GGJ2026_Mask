@@ -31,8 +31,14 @@ MonoBehaviour:
   - I want real {0}, like a real dragon warrior.
   - I want {0}.
   abnormal:
-  - '{0}, but just the wrap nothing inside.'
+  - One Sigma Roll.
+  - Same way you did it last time.
   - One shawarma without shawarma.
+  - "I\u2019d like a veggie shawarma, please."
+  - Can I get a vegetarian shawarma?
+  - Same way you did it last time.
+  - One pork shawarma with extra meat.
+  - '{0}, but just the wrap nothing inside.'
   - '{0} with no bread.'
   - '{0}, no sauce just ketchup.'
   - '{0}, with extra ketchup.'
@@ -42,9 +48,4 @@ MonoBehaviour:
   - Can I get a {0} with no spicy sauce?
   - '{0}, no garlic sauce.'
   - '{0} with ketchup instead of garlic sauce, please.'
-  - "I\u2019d like a veggie shawarma, please."
-  - Can I get a vegetarian shawarma?
-  - Same way you did it last time.
   - '{0}, no pickles please.'
-  - One pork shawarma with extra meat.
-  - One Sigma Roll.

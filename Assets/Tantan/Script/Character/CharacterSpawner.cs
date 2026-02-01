@@ -19,6 +19,7 @@ public class CharacterSpawner : MonoBehaviour
     [SerializeField] float NormiePity = 40;
     [SerializeField] float PolicePity = 20;
     [SerializeField] float GangPity = 20;
+    public bool isStart = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +30,8 @@ public class CharacterSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isStart) return;
+
         if (currentCharacter == null)
         {
             NewCustomer();
