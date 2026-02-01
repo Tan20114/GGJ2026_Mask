@@ -1,0 +1,1692 @@
+fileFormatVersion: 2
+guid: af8c40dfed04e484e8b126966aff1d00
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8373304583439437803
+    second: Sprite_UI_Desacle_0
+  - first:
+      213: 4860674240818558456
+    second: Sprite_UI_Desacle_1
+  - first:
+      213: -2559100899528574911
+    second: Sprite_UI_Desacle_2
+  - first:
+      213: 5193791246018456652
+    second: Sprite_UI_Desacle_3
+  - first:
+      213: 8455390884242601019
+    second: Sprite_UI_Desacle_4
+  - first:
+      213: 2748113318625254750
+    second: Sprite_UI_Desacle_5
+  - first:
+      213: 8726215158579512224
+    second: Sprite_UI_Desacle_6
+  - first:
+      213: -4377003941317942885
+    second: Sprite_UI_Desacle_7
+  - first:
+      213: 1526926863707451131
+    second: Sprite_UI_Desacle_8
+  - first:
+      213: -6060917952889125849
+    second: Sprite_UI_Desacle_9
+  - first:
+      213: 6446084781224513091
+    second: Sprite_UI_Desacle_10
+  - first:
+      213: -7195340947875616150
+    second: Sprite_UI_Desacle_11
+  - first:
+      213: 5242514885792630482
+    second: Sprite_UI_Desacle_12
+  - first:
+      213: -2036836149749227672
+    second: Sprite_UI_Desacle_13
+  - first:
+      213: 1433696235810039361
+    second: Sprite_UI_Desacle_14
+  - first:
+      213: 4481442223178454747
+    second: Sprite_UI_Desacle_15
+  - first:
+      213: -5642986122536980573
+    second: Sprite_UI_Desacle_16
+  - first:
+      213: -7993823184458535437
+    second: Sprite_UI_Desacle_17
+  - first:
+      213: 8356859345862029028
+    second: Sprite_UI_Desacle_18
+  - first:
+      213: -2097667666799592924
+    second: Sprite_UI_Desacle_19
+  - first:
+      213: -6986982441059764080
+    second: Sprite_UI_Desacle_20
+  - first:
+      213: 9139918070284459438
+    second: Sprite_UI_Desacle_21
+  - first:
+      213: -804884893007656784
+    second: Sprite_UI_Desacle_22
+  - first:
+      213: 4951211703433877581
+    second: Sprite_UI_Desacle_23
+  - first:
+      213: -3151432969608128398
+    second: Sprite_UI_Desacle_24
+  - first:
+      213: -6285762058004005581
+    second: Sprite_UI_Desacle_25
+  - first:
+      213: 6858056453653230546
+    second: Sprite_UI_Desacle_26
+  - first:
+      213: -6623441909421930018
+    second: Sprite_UI_Desacle_27
+  - first:
+      213: 6821959835927756211
+    second: Sprite_UI_Desacle_28
+  - first:
+      213: 426720453851308218
+    second: Sprite_UI_Desacle_29
+  - first:
+      213: -3346035171481763288
+    second: Sprite_UI_Desacle_30
+  - first:
+      213: 6528432332434790958
+    second: Sprite_UI_Desacle_31
+  - first:
+      213: -3622384842284338790
+    second: Sprite_UI_Desacle_32
+  - first:
+      213: -1009317658393275975
+    second: Sprite_UI_Desacle_33
+  - first:
+      213: 3310184905552437312
+    second: Sprite_UI_Desacle_34
+  - first:
+      213: -338488330171981094
+    second: Sprite_UI_Desacle_35
+  - first:
+      213: -5520566354833135295
+    second: Sprite_UI_Desacle_36
+  - first:
+      213: -2167448016523308547
+    second: Sprite_UI_Desacle_37
+  - first:
+      213: -5898495890995311019
+    second: Sprite_UI_Desacle_38
+  - first:
+      213: -6881701523549534895
+    second: Sprite_UI_Desacle_39
+  - first:
+      213: -6592995017378689342
+    second: Sprite_UI_Desacle_40
+  - first:
+      213: -6551629769682692504
+    second: Sprite_UI_Desacle_41
+  - first:
+      213: 1636647203869035868
+    second: Sprite_UI_Desacle_42
+  - first:
+      213: -327388332668030192
+    second: Sprite_UI_Desacle_43
+  - first:
+      213: -5403579879420820215
+    second: Sprite_UI_Desacle_44
+  - first:
+      213: -2058136999348779247
+    second: Sprite_UI_Desacle_45
+  - first:
+      213: -5541007200300093097
+    second: Sprite_UI_Desacle_46
+  - first:
+      213: 4639631650042327777
+    second: Sprite_UI_Desacle_47
+  - first:
+      213: 3130912229289014403
+    second: Sprite_UI_Desacle_48
+  - first:
+      213: -2727790658496777145
+    second: Sprite_UI_Desacle_49
+  - first:
+      213: -916510948264249978
+    second: Sprite_UI_Desacle_50
+  - first:
+      213: -772412543896330557
+    second: Sprite_UI_Desacle_51
+  - first:
+      213: 2868570203397232681
+    second: Sprite_UI_Desacle_52
+  - first:
+      213: 7711122712004249149
+    second: Sprite_UI_Desacle_53
+  - first:
+      213: -6452341236317022527
+    second: Sprite_UI_Desacle_54
+  - first:
+      213: 78693057422345838
+    second: Sprite_UI_Desacle_55
+  - first:
+      213: -3651850304136161543
+    second: Sprite_UI_Desacle_56
+  - first:
+      213: 1749942423306107174
+    second: Sprite_UI_Desacle_57
+  - first:
+      213: -1653972831389806531
+    second: Sprite_UI_Desacle_58
+  - first:
+      213: 128514922085999921
+    second: Sprite_UI_Desacle_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 983
+        width: 221
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: befce0ca724f33470800000000000000
+      internalID: 8373304583439437803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 983
+        width: 220
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f5b1e41875947340800000000000000
+      internalID: 4860674240818558456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_2
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 983
+        width: 220
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14877336a4f3c7cd0800000000000000
+      internalID: -2559100899528574911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_3
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 983
+        width: 221
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ca670de9d041840800000000000000
+      internalID: 5193791246018456652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_4
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 936
+        width: 439
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b343b5ce535975570800000000000000
+      internalID: 8455390884242601019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_5
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 933
+        width: 439
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d9d2fc082432620800000000000000
+      internalID: 2748113318625254750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_6
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 874
+        width: 221
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3c2c8047eb91970800000000000000
+      internalID: 8726215158579512224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 874
+        width: 220
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9162411b12c143c0800000000000000
+      internalID: -4377003941317942885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_8
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 874
+        width: 220
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfea84d74ebb03510800000000000000
+      internalID: 1526926863707451131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_9
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 874
+        width: 221
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7248145eb3b43eba0800000000000000
+      internalID: -6060917952889125849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_10
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 766
+        width: 221
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e40f8a4f7157950800000000000000
+      internalID: 6446084781224513091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 766
+        width: 220
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a2d0cc783052c90800000000000000
+      internalID: -7195340947875616150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_12
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 766
+        width: 221
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d60e59338721c840800000000000000
+      internalID: 5242514885792630482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_13
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 766
+        width: 221
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86fd58c3054bbb3e0800000000000000
+      internalID: -2036836149749227672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_14
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 111
+        width: 614
+        height: 733
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 146a543612385e310800000000000000
+      internalID: 1433696235810039361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_15
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 666
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd61df155f7413e30800000000000000
+      internalID: 4481442223178454747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_16
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 666
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af69b5f40610b1b0800000000000000
+      internalID: -5642986122536980573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 666
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd2115ba2c301190800000000000000
+      internalID: -7993823184458535437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_18
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 666
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee620c6c4789f370800000000000000
+      internalID: 8356859345862029028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_19
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 557
+        width: 203
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a7697fe5693e2e0800000000000000
+      internalID: -2097667666799592924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_20
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 557
+        width: 203
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 098bdbc0d70490f90800000000000000
+      internalID: -6986982441059764080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_21
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 557
+        width: 203
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead9a7f3f0387de70800000000000000
+      internalID: 9139918070284459438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_22
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 557
+        width: 203
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8433b447974d4f0800000000000000
+      internalID: -804884893007656784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_23
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 448
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48dee6cfcc36b440800000000000000
+      internalID: 4951211703433877581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_24
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 448
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2789d01496cd344d0800000000000000
+      internalID: -3151432969608128398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_25
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 448
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33dfa0e26bc74c8a0800000000000000
+      internalID: -6285762058004005581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_26
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 448
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d373915206bc2f50800000000000000
+      internalID: 6858056453653230546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_27
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 341
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed988760daec414a0800000000000000
+      internalID: -6623441909421930018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_28
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 340
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bdb47493587cae50800000000000000
+      internalID: 6821959835927756211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_29
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 340
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab0633eedf30ce500800000000000000
+      internalID: 426720453851308218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_30
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 340
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822cdd55dbe7091d0800000000000000
+      internalID: -3346035171481763288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_31
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 333
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a53f20e96a99a50800000000000000
+      internalID: 6528432332434790958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_32
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 268
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91f1eb9d24babdc0800000000000000
+      internalID: -3622384842284338790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_33
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 272
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b190f1ffee2ef1f0800000000000000
+      internalID: -1009317658393275975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_34
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 267
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040205c22a320fd20800000000000000
+      internalID: 3310184905552437312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_35
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 267
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad2eb7738a27d4bf0800000000000000
+      internalID: -338488330171981094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_36
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 253
+        width: 203
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149a23546220363b0800000000000000
+      internalID: -5520566354833135295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_37
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 195
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df1d00a338dabe1e0800000000000000
+      internalID: -2167448016523308547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_38
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 204
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e8f1c1d35542ea0800000000000000
+      internalID: -5898495890995311019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_39
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 194
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155c096dce84f70a0800000000000000
+      internalID: -6881701523549534895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_40
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 194
+        width: 152
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce093f76f9f084a0800000000000000
+      internalID: -6592995017378689342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_41
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 164
+        width: 200
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866503ebf6fe315a0800000000000000
+      internalID: -6551629769682692504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_42
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 123
+        width: 53
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d0049e5f986b610800000000000000
+      internalID: 1636647203869035868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_43
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 122
+        width: 70
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013f6b7cb02e47bf0800000000000000
+      internalID: -327388332668030192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_44
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 144
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9058ca3aab0a205b0800000000000000
+      internalID: -5403579879420820215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_45
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 144
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1174ab6bd470073e0800000000000000
+      internalID: -2058136999348779247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_46
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 103
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7513b301f436a13b0800000000000000
+      internalID: -5541007200300093097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_47
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 103
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2be656768436040800000000000000
+      internalID: 4639631650042327777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_48
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 122
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384b2b1951c337b20800000000000000
+      internalID: 3130912229289014403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_49
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 115
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744bbaa39d0f42ad0800000000000000
+      internalID: -2727790658496777145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_50
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 67
+        width: 168
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685f3fff526e743f0800000000000000
+      internalID: -916510948264249978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_51
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 93
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ced00d32e6d745f0800000000000000
+      internalID: -772412543896330557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_52
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 93
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92813c2d6653fc720800000000000000
+      internalID: 2868570203397232681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_53
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 93
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36c5745049630b60800000000000000
+      internalID: 7711122712004249149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_54
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 93
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c618bfd4dda476a0800000000000000
+      internalID: -6452341236317022527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_55
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 93
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66c2f53be2971100800000000000000
+      internalID: 78693057422345838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_56
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 93
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6df092f75025dc0800000000000000
+      internalID: -3651850304136161543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_57
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 93
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 629fb86cc5b094810800000000000000
+      internalID: 1749942423306107174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_58
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 93
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d301dd41978eb09e0800000000000000
+      internalID: -1653972831389806531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_UI_Desacle_59
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 14
+        width: 168
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 135e54704a398c100800000000000000
+      internalID: 128514922085999921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 58371e9c59fd37e4996b4b156a5eca60
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Sprite_UI_Desacle_0: 8373304583439437803
+      Sprite_UI_Desacle_1: 4860674240818558456
+      Sprite_UI_Desacle_10: 6446084781224513091
+      Sprite_UI_Desacle_11: -7195340947875616150
+      Sprite_UI_Desacle_12: 5242514885792630482
+      Sprite_UI_Desacle_13: -2036836149749227672
+      Sprite_UI_Desacle_14: 1433696235810039361
+      Sprite_UI_Desacle_15: 4481442223178454747
+      Sprite_UI_Desacle_16: -5642986122536980573
+      Sprite_UI_Desacle_17: -7993823184458535437
+      Sprite_UI_Desacle_18: 8356859345862029028
+      Sprite_UI_Desacle_19: -2097667666799592924
+      Sprite_UI_Desacle_2: -2559100899528574911
+      Sprite_UI_Desacle_20: -6986982441059764080
+      Sprite_UI_Desacle_21: 9139918070284459438
+      Sprite_UI_Desacle_22: -804884893007656784
+      Sprite_UI_Desacle_23: 4951211703433877581
+      Sprite_UI_Desacle_24: -3151432969608128398
+      Sprite_UI_Desacle_25: -6285762058004005581
+      Sprite_UI_Desacle_26: 6858056453653230546
+      Sprite_UI_Desacle_27: -6623441909421930018
+      Sprite_UI_Desacle_28: 6821959835927756211
+      Sprite_UI_Desacle_29: 426720453851308218
+      Sprite_UI_Desacle_3: 5193791246018456652
+      Sprite_UI_Desacle_30: -3346035171481763288
+      Sprite_UI_Desacle_31: 6528432332434790958
+      Sprite_UI_Desacle_32: -3622384842284338790
+      Sprite_UI_Desacle_33: -1009317658393275975
+      Sprite_UI_Desacle_34: 3310184905552437312
+      Sprite_UI_Desacle_35: -338488330171981094
+      Sprite_UI_Desacle_36: -5520566354833135295
+      Sprite_UI_Desacle_37: -2167448016523308547
+      Sprite_UI_Desacle_38: -5898495890995311019
+      Sprite_UI_Desacle_39: -6881701523549534895
+      Sprite_UI_Desacle_4: 8455390884242601019
+      Sprite_UI_Desacle_40: -6592995017378689342
+      Sprite_UI_Desacle_41: -6551629769682692504
+      Sprite_UI_Desacle_42: 1636647203869035868
+      Sprite_UI_Desacle_43: -327388332668030192
+      Sprite_UI_Desacle_44: -5403579879420820215
+      Sprite_UI_Desacle_45: -2058136999348779247
+      Sprite_UI_Desacle_46: -5541007200300093097
+      Sprite_UI_Desacle_47: 4639631650042327777
+      Sprite_UI_Desacle_48: 3130912229289014403
+      Sprite_UI_Desacle_49: -2727790658496777145
+      Sprite_UI_Desacle_5: 2748113318625254750
+      Sprite_UI_Desacle_50: -916510948264249978
+      Sprite_UI_Desacle_51: -772412543896330557
+      Sprite_UI_Desacle_52: 2868570203397232681
+      Sprite_UI_Desacle_53: 7711122712004249149
+      Sprite_UI_Desacle_54: -6452341236317022527
+      Sprite_UI_Desacle_55: 78693057422345838
+      Sprite_UI_Desacle_56: -3651850304136161543
+      Sprite_UI_Desacle_57: 1749942423306107174
+      Sprite_UI_Desacle_58: -1653972831389806531
+      Sprite_UI_Desacle_59: 128514922085999921
+      Sprite_UI_Desacle_6: 8726215158579512224
+      Sprite_UI_Desacle_7: -4377003941317942885
+      Sprite_UI_Desacle_8: 1526926863707451131
+      Sprite_UI_Desacle_9: -6060917952889125849
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

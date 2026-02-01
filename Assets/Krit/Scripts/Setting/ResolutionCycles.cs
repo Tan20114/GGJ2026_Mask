@@ -6,10 +6,12 @@ public class ResolutionCycles : HoverChecker
 {
     Vector2Int[] resolutions =
     {
-        new Vector2Int(1024, 768),
-        new Vector2Int(1280, 1024),
+        new Vector2Int(640, 360),
+        new Vector2Int(854, 480),
+        new Vector2Int(960, 540),
+        new Vector2Int(1024, 576),
         new Vector2Int(1280, 720),
-        new Vector2Int(1366, 800),
+        new Vector2Int(1360, 768),
         new Vector2Int(1366, 768),
         new Vector2Int(1440, 900),
         new Vector2Int(1600, 900),
@@ -17,11 +19,26 @@ public class ResolutionCycles : HoverChecker
         new Vector2Int(2560, 1440)
     };
 
-    int index = 0;
+    private int index = 0;
+    private int maxIndex;
+    private Vector2Int masRes;
 
     protected override void Start()
     {
         base.Start();
+        UpdateText();
+        masRes = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+        for (int i = 0; i < resolutions.Length - 1; i++)
+        {
+            if (resolutions[i].x == Screen.currentResolution.width && resolutions[i].y == Screen.currentResolution.height)
+            {
+                maxIndex = i;
+                index = i;
+                break;
+            }
+        }
+        Debug.Log("Resolution" + masRes);
+        Debug.Log("Max Index : " + maxIndex + "/ index :" + index);
         UpdateText();
     }
 
@@ -46,14 +63,15 @@ public class ResolutionCycles : HoverChecker
 
     public void Next()
     {
-        index = (index + 1) % resolutions.Length;
+        index++;
+        if (index > maxIndex) index = 0;
         Apply();
     }
 
     public void Prev()
     {
         index--;
-        if (index < 0) index = resolutions.Length - 1;
+        if (index < 0) index = maxIndex;
         Apply();
     }
 

@@ -39,13 +39,28 @@ public class MasterVolume : HoverChecker
 
     private void IncVolume()
     {
-        Volume += 5;
+        if (Volume == 100)
+        {
+            Volume = 0;
+        }
+        else
+        {
+            Volume += 5;
+        }
         UpdateText();
     }
 
     private void DesVolume()
     {
-        Volume -= 5;
+        if (Volume == 0)
+        {
+            Volume = 100;
+        }
+        else
+        {
+            Volume -= 5;
+        }
+
         UpdateText();
     }
 }
