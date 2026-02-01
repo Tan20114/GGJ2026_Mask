@@ -115,8 +115,26 @@ public class CusWaitTimer : MonoBehaviour
             LeanTween.cancel(boarder);
             toggleActive(false);
         });
+    }
 
+    private void ShrinksBoarder(float duration)
+    {
 
+        LeanTween.cancel(boarder);
+
+        var time = targetScale * waitDuration;
+
+        LeanTween.scale(
+            boarder,
+            new Vector3(0, intialBoarderScale.y, intialBoarderScale.z),
+            duration
+        )
+        .setEase(LeanTweenType.easeInQuart)
+        .setOnComplete(() =>
+        {
+            LeanTween.cancel(boarder);
+            toggleActive(false);
+        });
     }
 
     private void OnFillbarRunOut()
@@ -198,6 +216,35 @@ public class CusWaitTimer : MonoBehaviour
         });
     }
 
+    private float cancleDuration = 0.2f;
+    public void CancleTimer()
+    {
+        if (CurrentState == CusWaitState.idle) return;
+        CurrentState = CusWaitState.idle;
+        LeanTween.cancel(image.gameObject);
+        LeanTween.cancel(boarder);
+        toggleActive(true);
+        image.color = end;
+
+        isShinking = true;
+        ShrinksBoarder(cancleDuration + 0.1f);
+
+        LeanTween.scale(
+            image.gameObject,
+            new Vector3(0, intialBoarderScale.x, intialBoarderScale.z),
+            cancleDuration
+            )
+            .setEase(LeanTweenType.linear)
+            .setOnUpdate((Vector3 scale) =>
+            {
+                if (scale.x <= scaleOffset && !isFillbarRunOut)
+                {
+                    OnFillbarRunOut();
+                    //Debug.Log("Force Bar End");
+                }
+            });
+    }
+
     #endregion
 
     #region Color
@@ -273,6 +320,11 @@ public class CusWaitTimer : MonoBehaviour
             {
                 CurrentState = CusWaitState.finished;
                 Served();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                CancleTimer();
             }
         }
     }

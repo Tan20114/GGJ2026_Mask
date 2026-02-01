@@ -11156,6 +11156,7 @@ MonoBehaviour:
   boarder: {fileID: 2072578613}
   finishParticle1: {fileID: 1613273458}
   finishParticle2: {fileID: 407528628}
+  targetScale: 0.6
   start: {r: 0, g: 1, b: 0, a: 1}
   mid: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   end: {r: 1, g: 0, b: 0, a: 1}
