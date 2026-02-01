@@ -23,16 +23,17 @@ public class ResolutionCycles : HoverChecker
 
     private int index = 0;
     private int maxIndex;
-    private Vector2Int masRes;
+    private Vector2Int maxRes;
 
     protected override void Start()
     {
         base.Start();
-        masRes = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+        maxRes = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+        //maxRes = new Vector2Int(699, 256);
 
         CheckForResolution();
-        Debug.Log("Resolution" + masRes);
-        Debug.Log("Max Index : " + maxIndex + "/ index :" + index);
+        //Debug.Log("Resolution" + maxRes);
+        //Debug.Log("Max Index : " + maxIndex + "/ index :" + index);
         UpdateText();
     }
 
@@ -85,14 +86,14 @@ public class ResolutionCycles : HoverChecker
     {
         for (int i = 0; i < resolutions.Length - 1; i++)
         {
-            if (resolutions[i].x == Screen.currentResolution.width && resolutions[i].y == Screen.currentResolution.height)
+            if (resolutions[i].x == maxRes.x && resolutions[i].y == maxRes.y)
             {
                 maxIndex = i;
                 index = i;
                 break;
             }
         }
-        if (resolutions[index].x != Screen.currentResolution.width || resolutions[index].y != Screen.currentResolution.height)
+        if (resolutions[index].x != maxRes.x || resolutions[index].y != maxRes.y)
         {
             CheckOutOfBoundRes();
         }
@@ -101,9 +102,11 @@ public class ResolutionCycles : HoverChecker
     private void CheckOutOfBoundRes()
     {
         Debug.Log("Player Don't have resolution in preset");
-        for (int i = resolutions.Length - 1; i > 0; i--)
+        for (int i = resolutions.Length - 1; i >= 0; i--)
         {
-            if (resolutions[i].x > Screen.currentResolution.width && resolutions[i].y > Screen.currentResolution.height)
+            Debug.Log($"Checking index {i}: {resolutions[i].x}x{resolutions[i].y}");
+            if (maxRes.x >= resolutions[i].x &&
+                maxRes.y >= resolutions[i].y)   
             {
                 maxIndex = i;
                 index = i;
