@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 
 public enum CharacterState
@@ -91,19 +92,7 @@ public class Character : MonoBehaviour
 
             TextMeshPro textField = dialogueBox.transform.GetChild(0).GetComponent<TextMeshPro>();
 
-            string food = "";
-
-            food = StringifyFood();
-
-            string result = speech;
-
-            if (speech.Contains("(food)"))
-            {
-                Debug.Log("Replacing food placeholder");
-                result = speech.Replace("(food)", food);
-            }
-
-            textField.text = result;
+            textField.text = speech;
         }
     }
 
@@ -190,6 +179,13 @@ public class Character : MonoBehaviour
                     }
                     break;
                 }
+        }
+
+        string food = StringifyFood();
+
+        if (speech.Contains("{0}"))
+        {
+            speech = string.Format(speech, food);
         }
     }
 }

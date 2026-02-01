@@ -13,38 +13,38 @@ MonoBehaviour:
   m_Name: DialogueList
   m_EditorClassIdentifier: Assembly-CSharp::Dialog
   speech:
-  - One (Food), please.
-  - One (Food), no onions please.
-  - One (Food) wrap.
-  - Can I get a (Food)?
-  - Sup man, I want a (Food).
-  - (Food), extra garlic sauce, please.
-  - Can I get a (Food) with extra garlic sauce?
-  - One large (Food), please.
-  - (Food), extra spicy sauce.
-  - Can I get a (Food) with extra hot sauce?
-  - I want a (Food) with extra meat.
-  - "Yo, gimme a (Food). Extra meat. Don\u2019t mess it up."
-  - Yo boss, (Food). Make it heavy.
-  - I want a big black (Food).
-  - Sup man, lemme get a (Food) with extra garlic sauce.
-  - I want real (Food), like a real dragon warrior.
-  - I want (Food).
+  - One {0}, please.
+  - One {0}, no onions please.
+  - One {0} wrap.
+  - Can I get a {0}?
+  - Sup man, I want a {0}.
+  - '{0}, extra garlic sauce, please.'
+  - Can I get a {0} with extra garlic sauce?
+  - One large {0}, please.
+  - '{0}, extra spicy sauce.'
+  - Can I get a {0} with extra hot sauce?
+  - I want a {0} with extra meat.
+  - "Yo, gimme a {0}. Extra meat. Don\u2019t mess it up."
+  - Yo boss, {0}. Make it heavy.
+  - I want a big black {0}.
+  - Sup man, lemme get a {0} with extra garlic sauce.
+  - I want real {0}, like a real dragon warrior.
+  - I want {0}.
   abnormal:
-  - (food), but just the wrap nothing inside.
+  - '{0}, but just the wrap nothing inside.'
   - One shawarma without shawarma.
-  - (Food) with no bread.
-  - (Food), no sauce just ketchup.
-  - (Food), with extra ketchup.
-  - "(Food), no bread. I\u2019ll eat it with rice."
-  - One (Food), extra soy sauce, please.
-  - (Food), no hot sauce, please.
-  - Can I get a (Food) with no spicy sauce?
-  - (Food), no garlic sauce.
-  - (Food) with ketchup instead of garlic sauce, please.
+  - '{0} with no bread.'
+  - '{0}, no sauce just ketchup.'
+  - '{0}, with extra ketchup.'
+  - "{0}, no bread. I\u2019ll eat it with rice."
+  - One {0}, extra soy sauce, please.
+  - '{0}, no hot sauce, please.'
+  - Can I get a {0} with no spicy sauce?
+  - '{0}, no garlic sauce.'
+  - '{0} with ketchup instead of garlic sauce, please.'
   - "I\u2019d like a veggie shawarma, please."
   - Can I get a vegetarian shawarma?
   - Same way you did it last time.
-  - (Food), no pickles please.
+  - '{0}, no pickles please.'
   - One pork shawarma with extra meat.
   - One Sigma Roll.

@@ -13,8 +13,9 @@ public enum Product
 
 public class GameManager : Singleton<GameManager>
 {
-    CusWaitTimer customerTimer => FindAnyObjectByType<CusWaitTimer>();
-    FoodWaitTimer foodTimer => FindAnyObjectByType<FoodWaitTimer>();
+    public CusWaitTimer customerTimer => FindAnyObjectByType<CusWaitTimer>();
+    public FoodWaitTimer foodTimer => FindAnyObjectByType<FoodWaitTimer>();
+    FoodManager fm => FindAnyObjectByType<FoodManager>();
     CharacterSpawner spawner => FindAnyObjectByType<CharacterSpawner>();
     CamMover mover => FindAnyObjectByType<CamMover>();
 
@@ -88,14 +89,19 @@ public class GameManager : Singleton<GameManager>
             Debug.Log("Customer left due to timeout");
             lifePoint--;
         }
+
         isTimerStart = false;
+        fm.CancelCooking();
+        productToSell = Product.None;
     }
 
     public void MissOrder(bool isIllegal)
     {
         if (spawner.currentCharacter.role == CharacterRole.Police && isIllegal)
         {
-            if(money >= bargainMoney)
+            mover.MoveToDefaultCam();
+
+            if (money >= bargainMoney)
             {
                 Debug.Log("Bribed the Police! Money Decreased.");
                 money -= bargainMoney;
@@ -114,6 +120,8 @@ public class GameManager : Singleton<GameManager>
         }
 
         isTimerStart = false;
+        fm.CancelCooking();
+        productToSell = Product.None;
     }
 
     void Serve()
