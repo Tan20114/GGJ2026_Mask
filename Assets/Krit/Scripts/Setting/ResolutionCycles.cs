@@ -1,5 +1,7 @@
+using Mono.Cecil;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class ResolutionCycles : HoverChecker
@@ -26,17 +28,9 @@ public class ResolutionCycles : HoverChecker
     protected override void Start()
     {
         base.Start();
-        UpdateText();
         masRes = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
-        for (int i = 0; i < resolutions.Length - 1; i++)
-        {
-            if (resolutions[i].x == Screen.currentResolution.width && resolutions[i].y == Screen.currentResolution.height)
-            {
-                maxIndex = i;
-                index = i;
-                break;
-            }
-        }
+
+        CheckForResolution();
         Debug.Log("Resolution" + masRes);
         Debug.Log("Max Index : " + maxIndex + "/ index :" + index);
         UpdateText();
@@ -87,5 +81,34 @@ public class ResolutionCycles : HoverChecker
         TMPtext.text = "Resolution : " + resolutions[index].x + " x " + resolutions[index].y;
     }
 
-    
+    private void CheckForResolution()
+    {
+        for (int i = 0; i < resolutions.Length - 1; i++)
+        {
+            if (resolutions[i].x == Screen.currentResolution.width && resolutions[i].y == Screen.currentResolution.height)
+            {
+                maxIndex = i;
+                index = i;
+                break;
+            }
+        }
+        if (resolutions[index].x != Screen.currentResolution.width || resolutions[index].y != Screen.currentResolution.height)
+        {
+            CheckOutOfBoundRes();
+        }
+    }
+
+    private void CheckOutOfBoundRes()
+    {
+        Debug.Log("Player Don't have resolution in preset");
+        for (int i = resolutions.Length - 1; i > 0; i--)
+        {
+            if (resolutions[i].x > Screen.currentResolution.width && resolutions[i].y > Screen.currentResolution.height)
+            {
+                maxIndex = i;
+                index = i;
+                break;
+            }
+        }
+    }
 }
