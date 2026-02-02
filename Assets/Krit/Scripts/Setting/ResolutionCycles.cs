@@ -14,10 +14,10 @@ public class ResolutionCycles : HoverChecker
         new Vector2Int(1280, 720),
         new Vector2Int(1360, 768),
         new Vector2Int(1366, 768),
-        new Vector2Int(1440, 900),
         new Vector2Int(1600, 900),
         new Vector2Int(1920, 1080),
-        new Vector2Int(2560, 1440)
+        new Vector2Int(2560, 1440),
+        new Vector2Int(3840, 2160)
     };
 
     private int index = 0;
@@ -61,6 +61,7 @@ public class ResolutionCycles : HoverChecker
                 //Debug.Log("Right");
                 Prev();
             }
+            Debug.Log("Resolution Index : " + index);
         }
     }
 
@@ -81,6 +82,7 @@ public class ResolutionCycles : HoverChecker
     void Apply()
     {
         var r = resolutions[index];
+        Screen.SetResolution(r.x, r.y, Screen.fullScreen);
         SaveToPlayerPrefs();
         UpdateText();
     }
@@ -98,12 +100,14 @@ public class ResolutionCycles : HoverChecker
             {
                 maxIndex = i;
                 index = i;
+                SaveToPlayerPrefs();
                 break;
             }
         }
         if (resolutions[index].x != maxRes.x || resolutions[index].y != maxRes.y)
         {
             CheckOutOfBoundRes();
+            SaveToPlayerPrefs();
         }
     }
 
@@ -118,7 +122,6 @@ public class ResolutionCycles : HoverChecker
             {
                 maxIndex = i;
                 index = i;
-                SaveToPlayerPrefs();
                 break;
             }
         }
@@ -126,10 +129,7 @@ public class ResolutionCycles : HoverChecker
 
     private void SaveToPlayerPrefs()
     {
-        if (PlayerPrefs.GetInt("MaxResolutionIndex") != maxIndex)
-        {
-            PlayerPrefs.SetInt("MaxResolutionIndex", maxIndex);
-        }
+        PlayerPrefs.SetInt("MaxResolutionIndex", maxIndex);
         PlayerPrefs.SetInt("ResolutionIndex", index);
         PlayerPrefs.Save();
     }
