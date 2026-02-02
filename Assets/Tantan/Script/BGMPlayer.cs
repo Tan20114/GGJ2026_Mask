@@ -26,7 +26,7 @@ public class BGMPlayer : MonoBehaviour
 
     private void Update()
     {
-        
+        source.volume = (float)MasterVolume.Volume / 100f;
     }
 
     void Start()
