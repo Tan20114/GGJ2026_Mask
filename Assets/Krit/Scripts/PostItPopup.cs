@@ -48,7 +48,14 @@ public class PostItPopup : MonoBehaviour
     {
         isActive = !isActive;
 
-        SoundFXManager.instance.PlaySoundFXClip(clickSfx);
+        if (clickSfx != null)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(clickSfx);
+        }
+        else
+        {
+            Debug.LogWarning("startSfx SFX is not assigned in PostitPopup");
+        }
 
         postit.SetActive(!postit.activeSelf);
         BG.SetActive(!BG.activeSelf);

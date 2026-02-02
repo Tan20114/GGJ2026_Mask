@@ -640,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 755550241000267661, guid: b8bb8952ca581784f98adb8ff10924c8, type: 3}
       propertyPath: clickSfx
       value: 
-      objectReference: {fileID: 8300000, guid: 2c36256132f9cd44ba316c6e423c7cc3, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3226851786328301004, guid: b8bb8952ca581784f98adb8ff10924c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10961,7 +10961,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -11004,7 +11004,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.19484124, y: 1.2080157, z: 90}
-  m_LocalScale: {x: 0.019484123, y: 0.019484123, z: 0.019484123}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -11260,14 +11260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8175fd740b8e3c4f901106a00c96cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CusWaitTimer
-  debugText: {fileID: 0}
   debugMode: 1
   waitDuration: 3
   boarder: {fileID: 2072578613}
   finishParticle1: {fileID: 1613273458}
   finishParticle2: {fileID: 407528628}
-  correctSfx: {fileID: 8300000, guid: 425d824c5a33fe9448d86f926ff350d0, type: 3}
-  wrongSfx: {fileID: 8300000, guid: 4f59e84544db8a948a819e97d95dc556, type: 3}
+  correctSfx: {fileID: 0}
+  wrongSfx: {fileID: 0}
   targetScale: 0.6
   start: {r: 0, g: 1, b: 0, a: 1}
   mid: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -12059,14 +12058,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5e34e1b3a4b00478c5fb764cfd3aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodWaitTimer
-  debugText: {fileID: 0}
   debugMode: 0
   boarder: {fileID: 1219671592}
   waitDuration: 5
   CurrentState: 0
   finishParticle: {fileID: 540134157}
-  startSfx: {fileID: 8300000, guid: b004b929d7c547a459025dd2faa89cbe, type: 3}
-  finishSfx: {fileID: 8300000, guid: c2f1ab7385af66642b893d28aaf89695, type: 3}
+  startSfx: {fileID: 0}
+  finishSfx: {fileID: 0}
   start: {r: 0, g: 0.36552286, b: 1, a: 1}
   end: {r: 0.025627732, g: 1, b: 0, a: 1}
   jumpHeight: 20
@@ -12240,12 +12238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba671f58d26b4434c943399d1d50c476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodManager
-  debugText: {fileID: 0}
   FoodCounter: {fileID: 1315187163}
   easeType: 15
   scaleSize: 1.1
   animDuration: 0.2
-  clikSfx: {fileID: 8300000, guid: f9dc12489aacfc5438a4a6160693f75d, type: 3}
+  clikSfx: {fileID: 0}
 --- !u!1 &1613273455
 GameObject:
   m_ObjectHideFlags: 0

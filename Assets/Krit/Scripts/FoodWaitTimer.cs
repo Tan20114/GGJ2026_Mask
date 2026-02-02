@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class FoodWaitTimer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI debugText;
 
     [SerializeField] bool debugMode = false;
     [SerializeField] GameObject boarder;
@@ -45,7 +44,6 @@ public class FoodWaitTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debugText.text = "FoodWaitTimer State: " + CurrentState.ToString();
 
         if (debugMode) DebugPlay();
     }
@@ -62,7 +60,14 @@ public class FoodWaitTimer : MonoBehaviour
 
         toggleActive(true);
         hasJumped = false;
-        SoundFXManager.instance.PlaySoundFXClip(startSfx);
+        if (startSfx != null)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(startSfx);
+        }
+        else
+        {
+            Debug.LogWarning("startSfx SFX is not assigned in FoodWaitTimer");
+        }
 
 
         LeanTween.cancel(img.gameObject);
@@ -189,7 +194,14 @@ public class FoodWaitTimer : MonoBehaviour
         if (CurrentState != State.finished) return false;
         
         PlayFinishParticle();
-        SoundFXManager.instance.PlaySoundFXClip(finishSfx);
+        if (finishSfx != null)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(finishSfx);
+        }
+        else
+        {
+            Debug.LogWarning("startSfx SFX is not assigned in FoodWaitTimer");
+        }
         CurrentState = State.idle;
         return true;
     }
