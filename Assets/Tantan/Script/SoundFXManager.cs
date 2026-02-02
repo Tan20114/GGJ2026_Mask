@@ -21,7 +21,7 @@ public class SoundFXManager : MonoBehaviour
     public void PlaySoundFXClip(AudioClip audioClip)
     {
         AudioSource audioSource = Instantiate(soundFXObject);
-        audioSource.volume = MasterVolume.Volume / 100;
+        audioSource.volume = (float)MasterVolume.Volume / 100f;
         audioSource.clip = audioClip;
 
         audioSource.Play();
