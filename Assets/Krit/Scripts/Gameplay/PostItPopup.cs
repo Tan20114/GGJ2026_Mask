@@ -33,8 +33,10 @@ public class PostItPopup : MonoBehaviour
     void Start()
     {
         //LeanTween.reset();
+        postit.transform.localPosition = gameObject.transform.GetChild(0).transform.localPosition;
         intialPos = postit.transform.localPosition;
         intialScale = postit.transform.localScale;
+
     }
 
     // Update is called once per frame
@@ -83,7 +85,7 @@ public class PostItPopup : MonoBehaviour
         } else
         {
             LeanTween.cancel(postit);
-            postit.transform.localPosition = intialPos;
+            postit.transform.localPosition = gameObject.transform.GetChild(0).transform.localPosition;
             postit.transform.localScale = intialScale;
         }
     }
