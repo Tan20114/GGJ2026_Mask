@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FullScreenToggle : HoverChecker
 {
+    ButtonSound bs => FindAnyObjectByType<ButtonSound>();
+
     private bool isFullscreen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -23,6 +25,7 @@ public class FullScreenToggle : HoverChecker
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
+                bs.PlayButtonSound();
                 ToggleFullScreen();
             }
         }

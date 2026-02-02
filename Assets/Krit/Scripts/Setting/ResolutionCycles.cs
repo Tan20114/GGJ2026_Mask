@@ -24,8 +24,11 @@ public class ResolutionCycles : HoverChecker
     private int maxIndex;
     private Vector2Int maxRes;
 
+    ButtonSound bs => FindAnyObjectByType<ButtonSound>();
+
     protected override void Start()
     {
+
         base.Start();
         maxRes = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
         //maxRes = new Vector2Int(699, 256);
@@ -50,6 +53,7 @@ public class ResolutionCycles : HoverChecker
             if (Input.GetMouseButtonDown(1))
             {
                 //Debug.Log("Right");
+                bs.PlayButtonSound();
                 Prev();
             }
         }

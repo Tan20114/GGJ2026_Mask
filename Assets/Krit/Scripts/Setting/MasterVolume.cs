@@ -4,6 +4,8 @@ using UnityEngine.Rendering;
 
 public class MasterVolume : HoverChecker
 {
+    ButtonSound bs => FindAnyObjectByType<ButtonSound>();
+
     private static byte _volume = 100;
     public static byte Volume {
         get => _volume;
@@ -28,6 +30,7 @@ public class MasterVolume : HoverChecker
             if (Input.GetMouseButtonDown(1))
             {
                 DesVolume();
+                bs.PlayButtonSound();
             }
         }
     }
