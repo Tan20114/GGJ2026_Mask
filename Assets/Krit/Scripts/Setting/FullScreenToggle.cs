@@ -10,7 +10,15 @@ public class FullScreenToggle : HoverChecker
     {
         base.Start();
         LeanTween.reset();
-        isFullscreen = true;
+        if(PlayerPrefs.HasKey("isFullScreen"))
+        {
+            isFullscreen = PlayerPrefs.GetInt("isFullScreen") == 1 ? true : false;
+        }
+        else
+        {
+            isFullscreen = true;
+            SaveToPlayerPrefs();
+        }
         Screen.fullScreen = isFullscreen;
 
         UpdateText();
@@ -38,6 +46,18 @@ public class FullScreenToggle : HoverChecker
     {
         isFullscreen = !isFullscreen;
         Screen.fullScreen = isFullscreen;
+        SaveToPlayerPrefs();
         UpdateText();
+    }
+
+    private void SaveToPlayerPrefs()
+    {
+        PlayerPrefs.SetInt("isFullScreen", isFullscreen ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveToPlayerPrefs();
     }
 }

@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,7 @@ public class GameManager : Singleton<GameManager>
 
     public Product currentProduct;
     public Product productToSell;
+
 
     public int LifePoint
     {

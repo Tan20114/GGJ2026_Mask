@@ -5274,6 +5274,14 @@ PrefabInstance:
       propertyPath: cookingSection
       value: 
       objectReference: {fileID: 27941734}
+    - target: {fileID: 3301309688961128469, guid: 8b461e7c6ee77be4f83963b87c35b424, type: 3}
+      propertyPath: ChooseProductText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301309688961128469, guid: 8b461e7c6ee77be4f83963b87c35b424, type: 3}
+      propertyPath: CorrectProductText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4243618466242015543, guid: 8b461e7c6ee77be4f83963b87c35b424, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.61374

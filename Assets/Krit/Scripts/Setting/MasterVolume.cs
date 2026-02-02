@@ -9,10 +9,23 @@ public class MasterVolume : HoverChecker
         get => _volume;
         set => _volume = (byte)Mathf.Clamp(value, 0, 100);
     }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
         base.Start();
+
+        if(PlayerPrefs.HasKey("MasterVolume"))
+        {
+            Volume = (byte)PlayerPrefs.GetInt("MasterVolume");
+        }
+        else
+        {
+            Volume = 100;
+            PlayerPrefs.SetInt("MasterVolume", Volume);
+            PlayerPrefs.Save();
+        }
+
         UpdateText();
     }
 
@@ -47,6 +60,7 @@ public class MasterVolume : HoverChecker
         {
             Volume += 5;
         }
+        SaveToPlayerPrefs();
         UpdateText();
     }
 
@@ -60,7 +74,18 @@ public class MasterVolume : HoverChecker
         {
             Volume -= 5;
         }
-
+        SaveToPlayerPrefs();
         UpdateText();
+    }
+
+    private void SaveToPlayerPrefs()
+    {
+        PlayerPrefs.SetInt("MasterVolume", Volume);
+        PlayerPrefs.Save();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveToPlayerPrefs();
     }
 }
