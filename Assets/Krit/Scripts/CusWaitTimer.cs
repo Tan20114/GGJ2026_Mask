@@ -1,10 +1,13 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CusWaitTimer : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI debugText;
+
     [SerializeField] bool debugMode = false;
     [SerializeField] float waitDuration = 5f;
     [SerializeField] GameObject boarder;
@@ -47,6 +50,7 @@ public class CusWaitTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        debugText.text = "CusWaitTimer State: " + CurrentState.ToString();
         if (debugMode) DebugPlay();
 
         //Debug.Log(CurrentState);

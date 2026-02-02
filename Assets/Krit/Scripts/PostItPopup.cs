@@ -32,7 +32,7 @@ public class PostItPopup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        LeanTween.reset();
+        //LeanTween.reset();
         intialPos = postit.transform.localPosition;
         intialScale = postit.transform.localScale;
     }

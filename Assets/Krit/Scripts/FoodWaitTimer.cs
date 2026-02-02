@@ -1,10 +1,13 @@
+using System.Threading;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using System.Threading;
 
 public class FoodWaitTimer : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI debugText;
+
     [SerializeField] bool debugMode = false;
     [SerializeField] GameObject boarder;
     [SerializeField] float waitDuration = 5f;
@@ -42,6 +45,8 @@ public class FoodWaitTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        debugText.text = "FoodWaitTimer State: " + CurrentState.ToString();
+
         if (debugMode) DebugPlay();
     }
 

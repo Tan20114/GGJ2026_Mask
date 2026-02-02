@@ -1,10 +1,12 @@
-using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class FoodManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI debugText;
     //[SerializeField] List<GameObject> foodItems;
     private GameObject SelectedFood;
     private bool haveSelected = false;
@@ -40,6 +42,7 @@ public class FoodManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        debugText.text = "FoodManager State: " + CurrentState.ToString();
         CheckFoodFinish();
     }
 
@@ -103,6 +106,19 @@ public class FoodManager : MonoBehaviour
                 CurrentState = SereveState.Ready;
                 UnSelectObject();
             }
+        }
+    }
+
+    public bool SereveFood()
+    {
+        if (CurrentState == SereveState.Ready)
+        {
+            CurrentState = SereveState.notReady;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
     #endregion

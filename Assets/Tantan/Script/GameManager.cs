@@ -68,7 +68,7 @@ public class GameManager : Singleton<GameManager>
         if (customerTimer.IsTimeOut() && isTimerStart)
             EndServing(false);
 
-        if (foodTimer.FinishCook())
+        if (fm.SereveFood())
             Serve();
     }
 
