@@ -27,8 +27,8 @@ public class GameManager : Singleton<GameManager>
     public bool isPoliced = false;
     public bool isGameOver = false;
 
-    public Product currentProduct;
-    public Product productToSell;
+    public Product currentProduct = Product.None;
+    public Product productToSell = Product.None;
 
     public int LifePoint
     {
@@ -52,6 +52,8 @@ public class GameManager : Singleton<GameManager>
             isTimerStart = true;
             customerTimer.StartTimer();
             int ranVal = Random.Range(0,4);
+
+            if (currentProduct != Product.None) return;
 
             currentProduct = ranVal switch
             {
