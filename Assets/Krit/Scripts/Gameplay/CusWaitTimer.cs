@@ -1,10 +1,12 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CusWaitTimer : MonoBehaviour
 {
+
     [SerializeField] bool debugMode = false;
     [SerializeField] float waitDuration = 5f;
     [SerializeField] GameObject boarder;
@@ -170,7 +172,14 @@ public class CusWaitTimer : MonoBehaviour
         if(CurrentState != CusWaitState.finished) return;
         LeanTween.cancel(image.gameObject);
         LeanTween.cancel(boarder);
-        SoundFXManager.instance.PlaySoundFXClip(correctSfx);
+        if (correctSfx != null)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(correctSfx);
+        }
+        else
+        {
+            Debug.LogWarning("startSfx SFX is not assigned in CusWaitTimer");
+        }
 
         image.color = start;
 
@@ -230,7 +239,14 @@ public class CusWaitTimer : MonoBehaviour
         LeanTween.cancel(boarder);
         toggleActive(true);
         image.color = end;
-        SoundFXManager.instance.PlaySoundFXClip(wrongSfx);
+        if (wrongSfx != null)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(wrongSfx);
+        }
+        else
+        {
+            Debug.LogWarning("startSfx SFX is not assigned in CusWaitTimer");
+        }
 
         isShinking = true;
         ShrinksBoarder(cancleDuration + 0.1f);

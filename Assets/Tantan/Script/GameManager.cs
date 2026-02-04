@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,7 @@ public class GameManager : Singleton<GameManager>
 
     public Product currentProduct = Product.None;
     public Product productToSell = Product.None;
+
 
     public int LifePoint
     {
@@ -70,7 +72,7 @@ public class GameManager : Singleton<GameManager>
         if (customerTimer.IsTimeOut() && isTimerStart)
             EndServing(false);
 
-        if (foodTimer.FinishCook())
+        if (fm.SereveFood())
             Serve();
     }
 

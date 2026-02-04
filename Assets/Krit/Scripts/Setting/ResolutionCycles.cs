@@ -14,10 +14,10 @@ public class ResolutionCycles : HoverChecker
         new Vector2Int(1280, 720),
         new Vector2Int(1360, 768),
         new Vector2Int(1366, 768),
-        new Vector2Int(1440, 900),
         new Vector2Int(1600, 900),
         new Vector2Int(1920, 1080),
-        new Vector2Int(2560, 1440)
+        new Vector2Int(2560, 1440),
+        new Vector2Int(3840, 2160)
     };
 
     private int index = 0;
@@ -33,7 +33,16 @@ public class ResolutionCycles : HoverChecker
         maxRes = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
         //maxRes = new Vector2Int(699, 256);
 
-        CheckForResolution();
+        if(PlayerPrefs.HasKey("ResolutionIndex") && PlayerPrefs.HasKey("MaxResolutionIndex"))
+        {
+            index = PlayerPrefs.GetInt("ResolutionIndex");
+            maxIndex = PlayerPrefs.GetInt("MaxResolutionIndex");
+            //Apply();
+        }
+        else
+        {
+            CheckForResolution();
+        }
         //Debug.Log("Resolution" + maxRes);
         //Debug.Log("Max Index : " + maxIndex + "/ index :" + index);
         UpdateText();
@@ -56,6 +65,7 @@ public class ResolutionCycles : HoverChecker
                 bs.PlayButtonSound();
                 Prev();
             }
+            Debug.Log("Resolution Index : " + index);
         }
     }
 
@@ -77,6 +87,7 @@ public class ResolutionCycles : HoverChecker
     {
         var r = resolutions[index];
         Screen.SetResolution(r.x, r.y, Screen.fullScreen);
+        SaveToPlayerPrefs();
         UpdateText();
     }
 
@@ -93,12 +104,14 @@ public class ResolutionCycles : HoverChecker
             {
                 maxIndex = i;
                 index = i;
+                SaveToPlayerPrefs();
                 break;
             }
         }
         if (resolutions[index].x != maxRes.x || resolutions[index].y != maxRes.y)
         {
             CheckOutOfBoundRes();
+            SaveToPlayerPrefs();
         }
     }
 
@@ -116,5 +129,17 @@ public class ResolutionCycles : HoverChecker
                 break;
             }
         }
+    }
+
+    private void SaveToPlayerPrefs()
+    {
+        PlayerPrefs.SetInt("MaxResolutionIndex", maxIndex);
+        PlayerPrefs.SetInt("ResolutionIndex", index);
+        PlayerPrefs.Save();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveToPlayerPrefs();
     }
 }

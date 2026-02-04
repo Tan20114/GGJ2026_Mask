@@ -32,9 +32,11 @@ public class PostItPopup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        LeanTween.reset();
+        //LeanTween.reset();
+        postit.transform.localPosition = gameObject.transform.GetChild(0).transform.localPosition;
         intialPos = postit.transform.localPosition;
         intialScale = postit.transform.localScale;
+
     }
 
     // Update is called once per frame
@@ -48,7 +50,14 @@ public class PostItPopup : MonoBehaviour
     {
         isActive = !isActive;
 
-        SoundFXManager.instance.PlaySoundFXClip(clickSfx);
+        if (clickSfx != null)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(clickSfx);
+        }
+        else
+        {
+            Debug.LogWarning("startSfx SFX is not assigned in PostitPopup");
+        }
 
         postit.SetActive(!postit.activeSelf);
         BG.SetActive(!BG.activeSelf);
@@ -76,7 +85,7 @@ public class PostItPopup : MonoBehaviour
         } else
         {
             LeanTween.cancel(postit);
-            postit.transform.localPosition = intialPos;
+            postit.transform.localPosition = gameObject.transform.GetChild(0).transform.localPosition;
             postit.transform.localScale = intialScale;
         }
     }

@@ -1,10 +1,12 @@
+using System.Threading;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using System.Threading;
 
 public class FoodWaitTimer : MonoBehaviour
 {
+
     [SerializeField] bool debugMode = false;
     [SerializeField] GameObject boarder;
     [SerializeField] float waitDuration = 5f;
@@ -42,6 +44,7 @@ public class FoodWaitTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (debugMode) DebugPlay();
     }
 
@@ -57,7 +60,14 @@ public class FoodWaitTimer : MonoBehaviour
 
         toggleActive(true);
         hasJumped = false;
-        SoundFXManager.instance.PlaySoundFXClip(startSfx);
+        if (startSfx != null)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(startSfx);
+        }
+        else
+        {
+            Debug.LogWarning("startSfx SFX is not assigned in FoodWaitTimer");
+        }
 
 
         LeanTween.cancel(img.gameObject);
@@ -184,7 +194,14 @@ public class FoodWaitTimer : MonoBehaviour
         if (CurrentState != State.finished) return false;
         
         PlayFinishParticle();
-        SoundFXManager.instance.PlaySoundFXClip(finishSfx);
+        if (finishSfx != null)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(finishSfx);
+        }
+        else
+        {
+            Debug.LogWarning("startSfx SFX is not assigned in FoodWaitTimer");
+        }
         CurrentState = State.idle;
         return true;
     }

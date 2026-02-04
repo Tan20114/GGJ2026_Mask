@@ -1,7 +1,8 @@
-using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class FoodManager : MonoBehaviour
 {
@@ -43,12 +44,12 @@ public class FoodManager : MonoBehaviour
         CheckFoodFinish();
     }
 
+    #region Select and Unselect Food
     public void SelectObject(GameObject item)
     {
         if (isCooking) return;
         if (SelectedFood != null) SelectedFood.transform.GetChild(0).gameObject.SetActive(false);
 
-        SoundFXManager.instance.PlaySoundFXClip(clikSfx);
 
         if (SelectedFood == item)
         {
@@ -56,6 +57,14 @@ public class FoodManager : MonoBehaviour
         }
         else if (SelectedFood != item)
         {
+            if (clikSfx != null)
+            {
+                SoundFXManager.instance.PlaySoundFXClip(clikSfx);
+            }else
+            {
+                Debug.LogWarning("Click SFX is not assigned in FoodManager");
+            }
+
             SelectedFood = item;
             haveSelected = true;
         }
@@ -72,6 +81,8 @@ public class FoodManager : MonoBehaviour
         haveSelected = false;
         SelectedFood = null;
     }
+
+    #endregion
 
     #region Sereve and Cook Food
     public void CookItem()
@@ -105,14 +116,27 @@ public class FoodManager : MonoBehaviour
             }
         }
     }
+
+    public bool SereveFood()
+    {
+        if (CurrentState == SereveState.Ready)
+        {
+            CurrentState = SereveState.notReady;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     #endregion
 
     #region Hover Animation
     public void Hover(GameObject obj)
     {
-        if (holderObj != obj)
+        if (holderObj != obj)   
         {
-            if(holderObj != null)
+            if (holderObj != null)
             {
                 // Reset previous object
                 LeanTween.cancel(holderObj);
@@ -123,6 +147,7 @@ public class FoodManager : MonoBehaviour
             holderObj = obj;
             intialPos = obj.transform.localPosition;
             intialScale = obj.transform.localScale;
+            if (!isCooking) obj.GetComponent<Button>().interactable = true;
             LeanTween.scale(obj, obj.transform.localScale * scaleSize, animDuration).setEase(easeType);
         }
     }
@@ -132,6 +157,7 @@ public class FoodManager : MonoBehaviour
         if (holderObj == obj)
         {
             LeanTween.cancel(holderObj);
+            obj.GetComponent<Button>().interactable = false;
             obj.transform.localPosition = intialPos;
             obj.transform.localScale = intialScale;
             holderObj = null;
