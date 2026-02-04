@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.24}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 69, y: -150}
+  m_AnchoredPosition: {x: 30, y: -150}
   m_SizeDelta: {x: 302.06, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &20525101
@@ -316,7 +316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.24}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 302.06, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &169780977
@@ -577,7 +577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -773, y: -210}
+  m_AnchoredPosition: {x: -741, y: -210}
   m_SizeDelta: {x: 317.03, y: 525.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281532821
@@ -594,8 +594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LeaningBehavior
   minAngle: 0
   maxAngle: 20
-  maxMove: 40
-  maxDistance: 1
+  maxMove: 20
+  maxDistance: 5
   smooth: 10
   isRotateX: 1
 --- !u!114 &281532822
@@ -956,7 +956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.24}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147, y: -302}
+  m_AnchoredPosition: {x: 60, y: -300}
   m_SizeDelta: {x: 302.06, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1417891085
@@ -1117,7 +1117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.24}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 205, y: -458}
+  m_AnchoredPosition: {x: 90, y: -450}
   m_SizeDelta: {x: 302.06, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1664040340
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   minAngle: 0
   maxAngle: 20
   maxMove: 30
-  maxDistance: 1
+  maxDistance: 5
   smooth: 10
   isRotateX: 1
 --- !u!114 &1688415392
@@ -1449,11 +1449,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f618b20b85748404aaac98ab6e3ea70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeaningBehavior
-  minAngle: 0
+  minAngle: -20
   maxAngle: 20
   maxMove: 30
-  maxDistance: 1
-  smooth: 10
+  maxDistance: 10
+  smooth: 30
   isRotateX: 1
 --- !u!95 &2024846363
 Animator:
@@ -1647,11 +1647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3599452453982705065, guid: 5aa6a64daaf9e3f4381b1c7e1b9264e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.42121
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3599452453982705065, guid: 5aa6a64daaf9e3f4381b1c7e1b9264e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.11007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3599452453982705065, guid: 5aa6a64daaf9e3f4381b1c7e1b9264e4, type: 3}
       propertyPath: m_LocalPosition.z

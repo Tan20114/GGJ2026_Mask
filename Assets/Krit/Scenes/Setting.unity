@@ -703,10 +703,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f618b20b85748404aaac98ab6e3ea70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeaningBehavior
-  minAngle: 0
+  minAngle: -20
   maxAngle: 20
   maxMove: 30
-  maxDistance: 1
+  maxDistance: 10
   smooth: 10
   isRotateX: 1
 --- !u!95 &344382635

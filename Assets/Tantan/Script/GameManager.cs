@@ -67,6 +67,8 @@ public class GameManager : Singleton<GameManager>
             
             if (spawner.currentCharacter.role == CharacterRole.Gang)
                 currentProduct = Product.Illegal;
+
+            spawner.currentCharacter.SentenceSelector(currentProduct);
         }
 
         if (customerTimer.IsTimeOut() && isTimerStart)
@@ -104,6 +106,7 @@ public class GameManager : Singleton<GameManager>
         isTimerStart = false;
         fm.CancelCooking();
         productToSell = Product.None;
+        currentProduct = Product.None;
     }
 
     public void MissOrder(bool isIllegal)
@@ -137,6 +140,7 @@ public class GameManager : Singleton<GameManager>
         isTimerStart = false;
         fm.CancelCooking();
         productToSell = Product.None;
+        currentProduct = Product.None;
     }
 
     void DifficultyCurve()

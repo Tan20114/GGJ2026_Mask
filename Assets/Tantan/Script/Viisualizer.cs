@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Viisualizer : MonoBehaviour
 {
     CharacterSpawner spawner => FindAnyObjectByType<CharacterSpawner>();
+    FoodWaitTimer cookTimer => FindAnyObjectByType<FoodWaitTimer>();
 
     [SerializeField] Image cookingSpriteRenderer;
     [SerializeField] Sprite[] cookingSprites;
@@ -21,6 +22,7 @@ public class Viisualizer : MonoBehaviour
     [SerializeField] GameObject endScreen;
 
     [SerializeField] Button downButton;
+    [SerializeField] Button upButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,10 +33,8 @@ public class Viisualizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!spawner.isStart)
-            downButton.interactable = false;
-        else
-            downButton.interactable = true;
+        downButton.interactable = spawner.isStart && spawner.currentCharacter && spawner.currentCharacter.currentState == CharacterState.Ordering ? true : false;
+        upButton.interactable = cookTimer.CurrentState != FoodWaitTimer.State.cooking ? true : false;
 
         CountServed();
         CookingVisual();

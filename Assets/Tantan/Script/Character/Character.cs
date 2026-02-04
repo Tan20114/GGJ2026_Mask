@@ -86,8 +86,6 @@ public class Character : MonoBehaviour
         {
             isTalking = true;
 
-            SentenceSelector();
-
             dialogueBox = Instantiate(dialoguePrefab, dialoguePoint.position, Quaternion.identity, this.transform);
 
             TextMeshPro textField = dialogueBox.transform.GetChild(0).GetComponent<TextMeshPro>();
@@ -96,13 +94,13 @@ public class Character : MonoBehaviour
         }
     }
 
-    string StringifyFood()
+    string StringifyFood(Product product)
     {
         Debug.Log("Replaced");
 
         string foodString = "";
 
-        switch (GameManager.Instance.currentProduct)
+        switch (product)
         {
             case Product.Chicken:
                 foodString = "chicken sharwama";
@@ -133,7 +131,7 @@ public class Character : MonoBehaviour
         return foodString;
     }
 
-    void SentenceSelector()
+    public void SentenceSelector(Product product)
     {
         switch (role)
         {
@@ -181,7 +179,7 @@ public class Character : MonoBehaviour
                 }
         }
 
-        string food = StringifyFood();
+        string food = StringifyFood(product);
 
         if (speech.Contains("{0}"))
         {
