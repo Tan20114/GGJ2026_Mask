@@ -35,7 +35,9 @@ public class CamMover : MonoBehaviour
         camera.Priority = 10;
 
         foodSection.alpha = 0;
+        foodSection.interactable = false;
         upperSection.alpha = 1;
+        upperSection.interactable = true;
         upButton.SetActive(false);
         downButton.SetActive(true);
     }

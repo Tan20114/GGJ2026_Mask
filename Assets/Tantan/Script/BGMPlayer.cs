@@ -34,6 +34,9 @@ public class BGMPlayer : MonoBehaviour
         if (started) return;
         started = true;
 
+        if (PlayerPrefs.HasKey("MasterVolume"))
+            source.volume = PlayerPrefs.GetInt("MasterVolume");
+
         StartCoroutine(PlayBGM());
     }
 

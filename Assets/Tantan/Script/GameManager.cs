@@ -127,6 +127,7 @@ public class GameManager : Singleton<GameManager>
             else
             {
                 Debug.Log("Caught by Police! Game Over!");
+                isPoliced = true;
                 lifePoint = 0;
             }
 
